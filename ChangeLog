@@ -1,3 +1,8 @@
 2015-01-26 Danilo Enoque Ferreira de Lima <dferreir@cern.ch>
+	* Added extension to ntuple saver.
+	* TtResonancesTools-00-00-02
+
+2015-01-26 Danilo Enoque Ferreira de Lima <dferreir@cern.ch>
 	* Moved tt resonances specific packages to TtResonancesTools.
+	* TtResonancesTools-00-00-01
 

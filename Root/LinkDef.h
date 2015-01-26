@@ -1,5 +1,5 @@
 #include "TtResonancesTools/ObjectLoaderTtres.h"
-
+#include "TtResonancesTools/TtresEventSaverFlatNtuple.h"
 #include "TtResonancesTools/TtResonancesToolsLoader.h"
 
 #ifdef __CINT__
@@ -11,7 +11,7 @@
 
 //for loading the object selection at run time
 #pragma link C++ class top::ObjectLoaderTtres+;
-
 #pragma link C++ class top::TtResonancesToolsLoader+;
+#pragma link C++ class top::TtresEventSaverFlatNtuple+;
 
 #endif

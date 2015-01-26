@@ -6,7 +6,7 @@
 
 #include "TtResonancesTools/ElectronTtres.h"
 #include "TtResonancesTools/MuonTtres.h"
-#include "TopObjectSelectionTools/JetDC14.h"
+#include "TtResonancesTools/JetTtres.h"
 #include "TtResonancesTools/FirstOverlapRemovalIndicesTtres.h"
 #include "TtResonancesTools/OverlapRemovalIndicesTtres.h"
 
@@ -17,8 +17,8 @@ top::TopObjectSelection* ObjectLoaderTtres::init(top::TopConfig* topConfig) {
 
     objectSelection->electronSelection(new top::ElectronTtres(topConfig->electronPtcut(), topConfig->electronVetoLArCrack(), topConfig->electronID(), topConfig->electronIDBkg()));
     objectSelection->muonSelection(new top::MuonTtres(25000., 2.5));
-    objectSelection->jetSelection(new top::JetDC14(25000., 2.5, 0.5));
-    objectSelection->largeJetSelection(new top::JetDC14(300000., 2., 0.));
+    objectSelection->jetSelection(new top::JetTtres(25000., 2.5, 0.5));
+    objectSelection->largeJetSelection(new top::JetTtres(300000., 2., 0.));
 
     objectSelection->overlapRemovalPreSelection(new top::FirstOverlapRemovalIndicesTtres());
     objectSelection->overlapRemovalPostSelection(new top::OverlapRemovalIndicesTtres());

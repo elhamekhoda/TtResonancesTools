@@ -13,7 +13,7 @@ PhotonCollectionName None
 METCollectionName MET_RefFinal
 
 ObjectSelectionName top::ObjectLoaderTtres
-OutputFormat top::EventSaverFlatNtuple
+OutputFormat top::TtresEventSaverFlatNtuple
 OutputFilename output.root
 PerfStats No
 
