@@ -1,0 +1,123 @@
+LibraryNames libTopEventSelectionTools libTopEventReconstructionTools libTtResonancesTools
+
+EventInfoName EventInfo
+#TruthCollectionName TruthParticle
+TruthCollectionName None
+ElectronCollectionName ElectronCollection
+MuonCollectionName Muons
+PhotonCollectionName None
+JetCollectionName AntiKt4LCTopoJets
+# original xAOD without trimmed jets
+#LargeJetCollectionName AntiKt10LCTopoTrimmedPtFrac5SmallR30Jets
+LargeJetCollectionName AntiKt10LCTopoJets
+LargeJetSubstructure Trimmer
+TauCollectionName None
+PhotonCollectionName None
+METCollectionName MET_RefFinal
+
+ObjectSelectionName top::ObjectLoaderTtres
+OutputFormat top::EventSaverFlatNtuple
+OutputFilename output.root
+PerfStats No
+
+CalculateSF False
+Systematics Nominal
+
+ElectronID LHTight
+ElectronIDBkg MediumPP
+
+SELECTION bejets
+INITIAL
+GRL data/TopAnalysis/data12_8TeV.periodB_DetStatus-v61-pro16_DQDefects-00-01-00_PHYS_StandardGRL_All_Good.xml
+#HFOR
+#LAR
+#TRIGGER EL
+EL_N 25000 >= 1
+EL_N 25000 == 1
+MU_N 25000 == 0
+#EL_TRIGGER_MATCH
+#EMU_OVERLAP
+JETCLEAN MediumBad
+MET > 20000
+MET+MWT > 60000
+JET_N 25000 >= 1
+JETCLOSELEPTON_N >= 1
+LARGEJETTTRESSL_N >= 1
+IP3DSV1_N 1.85 >= 1
+#MV1_N 0.5 >= 1
+#EXAMPLEPLOTS
+#PRINT
+SAVE
+
+SELECTION bmujets
+INITIAL
+GRL data/TopAnalysis/data12_8TeV.periodB_DetStatus-v61-pro16_DQDefects-00-01-00_PHYS_StandardGRL_All_Good.xml
+#HFOR
+#LAR
+#TRIGGER EL
+MU_N 25000 >= 1
+MU_N 25000 == 1
+EL_N 25000 == 0
+#MU_TRIGGER_MATCH
+#EMU_OVERLAP
+JETCLEAN MediumBad
+MET > 20000
+MET+MWT > 60000
+JET_N 25000 >= 1
+JETCLOSELEPTON_N >= 1
+LARGEJETTTRESSL_N >= 1
+IP3DSV1_N 1.85 >= 1
+#MV1_N 0.5 >= 1
+#EXAMPLEPLOTS
+#PRINT
+SAVE
+
+SELECTION rejets
+INITIAL
+GRL data/TopAnalysis/data12_8TeV.periodB_DetStatus-v61-pro16_DQDefects-00-01-00_PHYS_StandardGRL_All_Good.xml
+#HFOR
+#LAR
+#TRIGGER EL
+EL_N 25000 >= 1
+EL_N 25000 == 1
+MU_N 25000 == 0
+#EL_TRIGGER_MATCH
+#EMU_OVERLAP
+JETCLEAN MediumBad
+MET > 20000
+MET+MWT > 60000
+JET_N 25000 >= 1
+JET_N 25000 >= 2
+JET_N 25000 >= 3
+JET_N 25000 >= 4
+IP3DSV1_N 1.85 >= 1
+#MV1_N 0.5 >= 1
+#EXAMPLEPLOTS
+#PRINT
+SAVE
+
+SELECTION rmujets
+INITIAL
+GRL data/TopAnalysis/data12_8TeV.periodB_DetStatus-v61-pro16_DQDefects-00-01-00_PHYS_StandardGRL_All_Good.xml
+#HFOR
+#LAR
+#TRIGGER EL
+MU_N 25000 >= 1
+MU_N 25000 == 1
+EL_N 25000 == 0
+#MU_TRIGGER_MATCH
+#EMU_OVERLAP
+JETCLEAN MediumBad
+MET > 20000
+MET+MWT > 60000
+JET_N 25000 >= 1
+JET_N 25000 >= 2
+JET_N 25000 >= 3
+JET_N 25000 >= 4
+IP3DSV1_N 1.85 >= 1
+#MV1_N 0.5 >= 1
+#EXAMPLEPLOTS
+#PRINT
+SAVE
+
+

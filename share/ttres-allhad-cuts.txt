@@ -1,0 +1,43 @@
+LibraryNames libTopEventSelectionTools libTopEventReconstructionTools libTtResonancesTools
+
+EventInfoName EventInfo
+#TruthCollectionName TruthParticle
+TruthCollectionName None
+ElectronCollectionName ElectronCollection
+MuonCollectionName Muons
+JetCollectionName AntiKt4LCTopoJets
+# original xAOD without trimmed jets
+#LargeJetCollectionName AntiKt10LCTopoTrimmedPtFrac30SmallR5Jets
+LargeJetCollectionName AntiKt10LCTopoJets
+LargeJetSubstructure Trimmer
+TauCollectionName None
+PhotonCollectionName None
+METCollectionName MET_RefFinal
+
+ObjectSelectionName top::ObjectLoaderTtres
+OutputFormat top::EventSaverFlatNtuple
+OutputFilename output.root
+PerfStats No
+
+CalculateSF False
+Systematics Nominal
+
+ElectronID LHTight
+ElectronIDBkg MediumPP
+
+SELECTION allhad
+INITIAL
+GRL data/TopAnalysis/data12_8TeV.periodB_DetStatus-v61-pro16_DQDefects-00-01-00_PHYS_StandardGRL_All_Good.xml
+#HFOR
+#LAR
+#TRIGGER JET
+EL_N 25000 == 0
+MU_N 25000 == 0
+JETCLEAN MediumBad
+LARGEJETTTRESAH_N >= 1
+LARGEJETTTRESAH_N >= 2
+IP3DSV1_N 1.85 >= 1
+IP3DSV1_N 1.85 >= 2
+#MV1_N 0.5 >= 2
+#EXAMPLEPLOTS
+SAVE
