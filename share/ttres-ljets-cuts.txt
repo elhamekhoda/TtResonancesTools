@@ -8,9 +8,10 @@ MuonCollectionName Muons
 PhotonCollectionName None
 JetCollectionName AntiKt4LCTopoJets
 # original xAOD without trimmed jets
-#LargeJetCollectionName AntiKt10LCTopoTrimmedPtFrac5SmallR30Jets
-LargeJetCollectionName AntiKt10LCTopoJets
-LargeJetSubstructure Trimmer
+LargeJetCollectionName AntiKt10LCTopoTrimmedPtFrac5SmallR30Jets
+LargeJetSubstructure None
+#LargeJetCollectionName AntiKt10LCTopoJets
+#LargeJetSubstructure Trimmer
 TauCollectionName None
 PhotonCollectionName None
 METCollectionName MET_RefFinal
