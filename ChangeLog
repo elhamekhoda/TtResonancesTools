@@ -1,3 +1,8 @@
+2015-01-30 Danilo Enoque Ferreira de Lima <dferreir@cern.ch>
+	* Check if JVF cut is 0 (for large-R jets) and avoid JVF cut in that
+	case. Large-R jets don't have their JVF in the latest derivation
+	setup.
+
 2015-01-26 Danilo Enoque Ferreira de Lima <dferreir@cern.ch>
 	* Added extension to ntuple saver.
 	* TtResonancesTools-00-00-02

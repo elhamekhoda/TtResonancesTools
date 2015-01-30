@@ -20,15 +20,17 @@ bool JetTtres::passSelection(const xAOD::Jet& jet) {
     if (std::fabs(jet.eta()) > m_etamax)
         return false;
 
-    //std::vector<float> v_jvf = jet.getAttribute<std::vector<float> >("JVF");
-    //fewer than one jvf - then crash to let us know...
-    const float jvf = jet.getAttribute<std::vector<float> >("JVF").at(0);
-    //if (!v_jvf.empty())
-    //    jvf = v_jvf[0];
+    if (m_jvfmin > 0) { // use 0 for large-R jets, on which we don't want the JVF cut
+      //std::vector<float> v_jvf = jet.getAttribute<std::vector<float> >("JVF");
+      //fewer than one jvf - then crash to let us know...
+      const float jvf = jet.getAttribute<std::vector<float> >("JVF").at(0);
+      //if (!v_jvf.empty())
+      //    jvf = v_jvf[0];
 
-    if ((jet.pt() < 50e3) && std::fabs(jet.eta()) < 2.4 && std::fabs(jvf) < m_jvfmin)
-        return false;
+      if ((jet.pt() < 50e3) && std::fabs(jet.eta()) < 2.4 && std::fabs(jvf) < m_jvfmin)
+          return false;
 
+    }
     jet.auxdecor<int>("good") = 1;
     jet.auxdecor<int>("closeToLepton") = 0;
 
