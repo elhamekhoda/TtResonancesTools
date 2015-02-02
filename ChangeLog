@@ -1,3 +1,8 @@
+2015-02-02 Danilo Enoque Ferreira de Lima <dferreir@cern.ch>
+	* Updated object selection to follow new class structure for
+	isolation.
+	* TtResonancesTools-00-00-05.
+
 2015-01-30 Danilo Enoque Ferreira de Lima <dferreir@cern.ch>
 	* Added PACKAGE_PEDANTIC = 1 to avoid pedantic warnings.
 	* TtResonancesTools-00-00-04.

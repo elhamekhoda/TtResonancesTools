@@ -1,50 +1,62 @@
 #ifndef ELECTRONTTRES_H_
 #define ELECTRONTTRES_H_
 
+#include "TopObjectSelectionTools/ElectronCutBasedDC14.h"
+#include "TopObjectSelectionTools/IsolationTools.h"
 #include "TopObjectSelectionTools/ElectronSelectionBase.h"
 
-#include "ElectronIsolationSelection/ElectronIsolationSelectionTool.h"
-
-
-  /**
-  * @brief An example class implementing a fairly tight electron selection with
-  * isolation.
-  *
-  * @brief A little class that initialises any tools (for isolation etc) that
-  * it needs at the start of the job.  So that if that doesn't work it'll
-  * crash asap for you to figure out.  After that it looks at each electron
-  * and decides to keep it (or not).
-  *
-  * @param ptcut The lower pT threshold to apply to the electron.
-  */
+#include <memory>
 
 namespace top {
 
-  class ElectronTtres : public top::ElectronSelectionBase {
-    public:
-      ElectronTtres(const float ptcut, const bool vetoLArCrack, const std::string& idType,const std::string& idTypeBkg = "NULL");
+/**
+ * @brief Electron selection based on the cut-based thingy.
+ */
+class ElectronTtres : public top::ElectronCutBasedDC14 {
+public:
+    /**
+     * @brief Class to help select cut-based good electrons.
+     *
+     * @param ptcut The minimum pT cut to apply to the electrons.
+     * @param vetoCrack Do you want to veto 1.37 < |cluster_eta| < 1.52?
+     * @param quality The definition for good electrons, e.g. "Tight"
+     * @param qualityLoose The loose defeinition, for fake-lepton estimates with
+     * the matrix method?
+     * @param isolation nullptr for un-isolated, or a new "isolation object" to
+     * apply isolation cuts
+     */
+    ElectronTtres(double ptcut, bool vetoCrack, const std::string& quality, const std::string& qualityLoose, IsolationBase* isolation);
 
-      /**
-      * @brief Doesn't do anything itself.
-      */
-      virtual ~ElectronTtres(){}
+    /**
+     * @brief The cuts to select good electrons for your analysis should be
+     * implemented in here.
+     *
+     * @param el The electron to cut on (all electrons in the event are passed
+     * to the tool)
+     * @return True if this is a good electron, false otherwise.
+     */
+    bool passSelection(const xAOD::Electron& el) const override;
 
-      /**
-      * @brief The cuts (per object) are implemented in here.
-      *
-      * Not that I've marked this as final, to stop people going crazy with
-      * inheritance.  Why not just inherit from ElectronSelectionBase instead?
-      *
-      * @param el The electron to cut on.
-      * @return True if you want to keep this electron, false otherwise.
-      */
-      bool passSelection(const xAOD::Electron& el) const override final;
-      bool passSelectionBkg(const xAOD::Electron& el) const override final;
+    /**
+     * @brief The loose selection needed by some background estimates.
+     *
+     * @param el
+     * @return
+     */
+    bool passSelectionLoose(const xAOD::Electron& el) const override;
 
-      ///Print the cuts to the ostream.
-      void print(std::ostream& os) const override final;
-  };
+    /**
+     * @brief Print some useful information about the electron selection.
+     *
+     * Usually this goes to the log file, so you know what you ran with.
+     *
+     * @param Where the print-out should go, e.g. cout.
+     */
+    void print(std::ostream&) const override;
+
+};
 
 }
 
 #endif
+

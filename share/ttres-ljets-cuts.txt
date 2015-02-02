@@ -24,8 +24,8 @@ PerfStats No
 CalculateSF False
 Systematics Nominal
 
-ElectronID LHTight
-ElectronIDBkg MediumPP
+ElectronID Tight
+ElectronIDBkg Medium
 
 SELECTION bejets
 INITIAL
