@@ -1,3 +1,7 @@
+2015-02-05 Simon <simon@cern.ch>
+	* Remove a few harmless warnings
+	* TtResonancesTools-00-00-06
+
 2015-02-02 Danilo Enoque Ferreira de Lima <dferreir@cern.ch>
 	* Updated object selection to follow new class structure for
 	isolation.

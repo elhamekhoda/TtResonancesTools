@@ -24,7 +24,7 @@ namespace top {
       ClassDef(TtresEventSaverFlatNtuple, 0);
   };
 
-};
+}
 
 #endif
 

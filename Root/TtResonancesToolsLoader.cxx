@@ -10,7 +10,7 @@
 
 namespace top {
 
-top::EventSelectorBase* TtResonancesToolsLoader::initTool(const std::string& name, const std::string& line, TFile* outputFile, EL::Worker* wk) {
+top::EventSelectorBase* TtResonancesToolsLoader::initTool(const std::string& /*name*/, const std::string& line, TFile* /*outputFile*/, EL::Worker* /*wk*/) {
     //get the first bit of the string and store it in toolname
     std::istringstream iss(line);
     std::string toolname;
