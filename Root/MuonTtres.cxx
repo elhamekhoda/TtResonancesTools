@@ -12,7 +12,8 @@ MuonTtres::MuonTtres(double ptcut, double etamax, double sd0, IsolationBase *iso
 MuonTtres::~MuonTtres() {
 }
 
-bool MuonTtres::passSelection(const xAOD::Muon& mu) {
+bool MuonTtres::passSelection(const xAOD::Muon& mu) const
+{
     bool basic = MuonDC14::passSelection(mu);
     if (!basic) return false;
 
@@ -35,6 +36,12 @@ bool MuonTtres::passSelection(const xAOD::Muon& mu) {
     //if (std::fabs(z0) > 2.0) return false;
 
     return true;
+}
+
+bool MuonTtres::passSelectionLoose(const xAOD::Muon& mu) const
+{
+  // For now.....just to get the machinery working....
+  return passSelection(mu);  
 }
 
 void MuonTtres::print(std::ostream& os) const {

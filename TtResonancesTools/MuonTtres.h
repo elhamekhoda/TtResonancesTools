@@ -34,7 +34,15 @@ public:
      * @param mu The muon that we want to check.
      * @return True if the muon is good, false otherwise.
      */
-    bool passSelection(const xAOD::Muon& mu) override;
+    bool passSelection(const xAOD::Muon& mu) const override;
+ 
+    /**
+     * @brief The loose selection needed by some background estimates.
+     *
+     * @param mu
+     * @return
+     */  
+    bool passSelectionLoose(const xAOD::Muon& mu) const override;        
 
     ///Print the cuts to the ostream.
     void print(std::ostream& os) const override;

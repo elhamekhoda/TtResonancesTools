@@ -1,4 +1,8 @@
 2015-02-27 John Morris <john.morris@cern.ch>
+	* Changes to MuonSelectionBase
+	* TtResonancesTools-00-00-08
+
+2015-02-27 John Morris <john.morris@cern.ch>
 	* Change ElectronIDBkg to ElectronIDLoose
 	* TtResonancesTools-00-00-07
 
