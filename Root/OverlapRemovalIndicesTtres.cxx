@@ -16,17 +16,26 @@ namespace top {
                                               std::shared_ptr<std::vector<unsigned int>> OUT_el,
                                               std::shared_ptr<std::vector<unsigned int>> OUT_mu,
                                               std::shared_ptr<std::vector<unsigned int>> OUT_jet,
-                                              std::shared_ptr<std::vector<unsigned int>> OUT_ljet)
+                                              std::shared_ptr<std::vector<unsigned int>> OUT_ljet,
+                                              const bool isLoose)                                                 
   {
       // Work internally with std::list
       // What passed the pre-overlap removal selection?
       std::vector<unsigned int> IN_el,IN_mu,IN_jet,IN_ljet;
       std::list<unsigned int> l_el,l_mu,l_jet,l_ljet;
       unsigned int index_el(0),index_mu(0),index_jet(0),index_ljet(0);
+     
+      std::string passTopCuts("");
+      if (isLoose) {
+        passTopCuts = "passPreORSelection";
+      }
+      if (!isLoose) {
+        passTopCuts = "passPreORSelectionLoose";
+      }     
 
       if (el) {
           for( auto x : *el ){
-              if( x->auxdataConst< char >("passPreORSelection") == 1 ){
+              if( x->auxdataConst< char >(passTopCuts) == 1 ){
                   IN_el.push_back(index_el);
                   l_el.push_back(index_el);
               }
@@ -36,7 +45,7 @@ namespace top {
 
       if (mu) {
           for( auto x : *mu ){
-              if( x->auxdataConst< char >("passPreORSelection") == 1 ){
+              if( x->auxdataConst< char >(passTopCuts) == 1 ){
                   IN_mu.push_back(index_mu);
                   l_mu.push_back(index_mu);
               }
@@ -46,7 +55,7 @@ namespace top {
 
       if (jet) {
           for( auto x : *jet ){
-              if( x->auxdataConst< char >("passPreORSelection") == 1 ){
+              if( x->auxdataConst< char >(passTopCuts) == 1 ){
                   IN_jet.push_back(index_jet);
                   l_jet.push_back(index_jet);
               }
@@ -56,7 +65,7 @@ namespace top {
 
       if (ljet) {
           for( auto x : *ljet ){
-              if( x->auxdataConst< char >("passPreORSelection") == 1 ){
+              if( x->auxdataConst< char >(passTopCuts) == 1 ){
                   IN_ljet.push_back(index_ljet);
                   l_ljet.push_back(index_ljet);
               }

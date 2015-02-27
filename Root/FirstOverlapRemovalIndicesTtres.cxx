@@ -12,7 +12,9 @@ void FirstOverlapRemovalIndicesTtres::overlapremoval(xAOD::ElectronContainer* el
         std::shared_ptr<std::vector<unsigned int>>  /*OUT_el*/,
         std::shared_ptr<std::vector<unsigned int>>  /*OUT_mu*/,
         std::shared_ptr<std::vector<unsigned int>>  /*OUT_jet*/,
-        std::shared_ptr<std::vector<unsigned int>>  /*OUT_ljet*/) {
+        std::shared_ptr<std::vector<unsigned int>>  /*OUT_ljet*/,
+        const bool /*isLoose*/
+                                                    ) {
     m_o.Load(jet, el);
     m_o.AnalyzeEvent();
 }
