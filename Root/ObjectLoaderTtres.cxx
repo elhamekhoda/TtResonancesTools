@@ -23,12 +23,12 @@ top::TopObjectSelection* ObjectLoaderTtres::init(top::TopConfig* topConfig) {
     // cut based is tt resonances default, but use the top standard one if the user wants LH (but with mini isolation)
     if (topConfig->electronID().find("LH") == std::string::npos && topConfig->electronIDLoose().find("LH") == std::string::npos) {
         //both the tight and loose user settings do not contain LH -> cut based
-        objectSelection->electronSelection(new top::ElectronTtres(topConfig->electronPtcut(), topConfig->electronVetoLArCrack(), topConfig->electronID(), topConfig->electronIDLoose(), new top::ApproxPTVarCone(0.05, 0.)));
+        objectSelection->electronSelection(new top::ElectronTtres(topConfig->electronPtcut(), topConfig->electronVetoLArCrack(), topConfig->electronID(), topConfig->electronIDLoose(), new top::RelativePTVarCone(20, 0.05, 20, 99.)));
     } else if (topConfig->electronID().find("LH") == 0 && topConfig->electronIDLoose().find("LH") == 0) {
         //user wants likelihood electrons
         LikeEnum::Menu operatingPoint = top::ElectronLikelihoodDC14::textToEgammaEnum(topConfig->electronID());
         LikeEnum::Menu operatingPointLoose = top::ElectronLikelihoodDC14::textToEgammaEnum(topConfig->electronIDLoose());
-        objectSelection->electronSelection(new top::ElectronLikelihoodDC14(topConfig->electronPtcut(), topConfig->electronVetoLArCrack(), operatingPoint, operatingPointLoose, new top::ApproxPTVarCone(0.05, 0.)));
+        objectSelection->electronSelection(new top::ElectronLikelihoodDC14(topConfig->electronPtcut(), topConfig->electronVetoLArCrack(), operatingPoint, operatingPointLoose, new top::RelativePTVarCone(20, 0.05, 20, 99.)));
     } else {
         std::cout << "\nHo hum\n";
         std::cout << "Not sure it makes sense to use a mix of LH and cut-based electrons for the tight/loose definitions\n";
@@ -38,7 +38,7 @@ top::TopObjectSelection* ObjectLoaderTtres::init(top::TopConfig* topConfig) {
         exit(1);
     }
 
-    objectSelection->muonSelection(new top::MuonTtres(25000., 2.5, 3.0, new top::ApproxPTVarCone(0.05, 0.)));
+    objectSelection->muonSelection(new top::MuonTtres(25000., 2.5, 3.0, new top::RelativePTVarCone(20, 0.05, 20, 99.)));
 
     objectSelection->jetSelection(new top::JetTtres(25000., 2.5, 0.5));
     objectSelection->largeJetSelection(new top::JetTtres(300000., 2., 0.));

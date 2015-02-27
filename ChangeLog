@@ -1,3 +1,7 @@
+2015-02-27 Danilo Ferreira de Lima <dferreir@cern.ch>
+	* Moved to the RelativePTVarCone as default isolation.
+	* TtResonancesTools-00-00-10
+
 2015-02-27 John Morris <john.morris@cern.ch>
 	* Changes to OR for loose
 	* TtResonancesTools-00-00-09
