@@ -26,7 +26,7 @@ namespace top {
 
       if (el) {
           for( auto x : *el ){
-              if( x->auxdataConst< unsigned int >("passPreORSelection") == 1 ){
+              if( x->auxdataConst< char >("passPreORSelection") == 1 ){
                   IN_el.push_back(index_el);
                   l_el.push_back(index_el);
               }
@@ -36,7 +36,7 @@ namespace top {
 
       if (mu) {
           for( auto x : *mu ){
-              if( x->auxdataConst< unsigned int >("passPreORSelection") == 1 ){
+              if( x->auxdataConst< char >("passPreORSelection") == 1 ){
                   IN_mu.push_back(index_mu);
                   l_mu.push_back(index_mu);
               }
@@ -46,7 +46,7 @@ namespace top {
 
       if (jet) {
           for( auto x : *jet ){
-              if( x->auxdataConst< unsigned int >("passPreORSelection") == 1 ){
+              if( x->auxdataConst< char >("passPreORSelection") == 1 ){
                   IN_jet.push_back(index_jet);
                   l_jet.push_back(index_jet);
               }
@@ -56,7 +56,7 @@ namespace top {
 
       if (ljet) {
           for( auto x : *ljet ){
-              if( x->auxdataConst< unsigned int >("passPreORSelection") == 1 ){
+              if( x->auxdataConst< char >("passPreORSelection") == 1 ){
                   IN_ljet.push_back(index_ljet);
                   l_ljet.push_back(index_ljet);
               }

@@ -25,7 +25,7 @@ CalculateSF False
 Systematics Nominal
 
 ElectronID Tight
-ElectronIDBkg Medium
+ElectronIDLoose Medium
 
 SELECTION bejets
 INITIAL

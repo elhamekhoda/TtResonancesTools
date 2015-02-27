@@ -23,7 +23,7 @@ CalculateSF False
 Systematics Nominal
 
 ElectronID LHTight
-ElectronIDBkg MediumPP
+ElectronIDLoose LHMedium
 
 SELECTION allhad
 INITIAL

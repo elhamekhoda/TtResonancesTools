@@ -1,3 +1,7 @@
+2015-02-27 John Morris <john.morris@cern.ch>
+	* Change ElectronIDBkg to ElectronIDLoose
+	* TtResonancesTools-00-00-07
+
 2015-02-05 Simon <simon@cern.ch>
 	* Remove a few harmless warnings
 	* TtResonancesTools-00-00-06

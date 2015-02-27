@@ -35,7 +35,7 @@ void TTBarElectronJetOverlap::Load(xAOD::JetContainer *jets, xAOD::ElectronConta
     }
 
     for (size_t i = 0; i < se; i++) {
-        fElGood[i] = m_electrons->at(i)->auxdata<unsigned int>("passPreORSelection");
+        fElGood[i] = m_electrons->at(i)->auxdataConst<char>("passPreORSelection");
         if (!fElGood[i]) continue;
 
         fElClTLVs[i].SetPtEtaPhiM(m_electrons->at(i)->caloCluster()->e()/std::cosh(m_electrons->at(i)->caloCluster()->eta()),

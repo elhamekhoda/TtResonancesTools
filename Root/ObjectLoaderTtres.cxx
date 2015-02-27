@@ -21,19 +21,19 @@ top::TopObjectSelection* ObjectLoaderTtres::init(top::TopConfig* topConfig) {
     top::TopObjectSelection* objectSelection = new top::TopObjectSelection(topConfig);
 
     // cut based is tt resonances default, but use the top standard one if the user wants LH (but with mini isolation)
-    if (topConfig->electronID().find("LH") == std::string::npos && topConfig->electronIDBkg().find("LH") == std::string::npos) {
+    if (topConfig->electronID().find("LH") == std::string::npos && topConfig->electronIDLoose().find("LH") == std::string::npos) {
         //both the tight and loose user settings do not contain LH -> cut based
-        objectSelection->electronSelection(new top::ElectronTtres(topConfig->electronPtcut(), topConfig->electronVetoLArCrack(), topConfig->electronID(), topConfig->electronIDBkg(), new top::ApproxPTVarCone(0.05, 0.)));
-    } else if (topConfig->electronID().find("LH") == 0 && topConfig->electronIDBkg().find("LH") == 0) {
+        objectSelection->electronSelection(new top::ElectronTtres(topConfig->electronPtcut(), topConfig->electronVetoLArCrack(), topConfig->electronID(), topConfig->electronIDLoose(), new top::ApproxPTVarCone(0.05, 0.)));
+    } else if (topConfig->electronID().find("LH") == 0 && topConfig->electronIDLoose().find("LH") == 0) {
         //user wants likelihood electrons
         LikeEnum::Menu operatingPoint = top::ElectronLikelihoodDC14::textToEgammaEnum(topConfig->electronID());
-        LikeEnum::Menu operatingPointLoose = top::ElectronLikelihoodDC14::textToEgammaEnum(topConfig->electronIDBkg());
+        LikeEnum::Menu operatingPointLoose = top::ElectronLikelihoodDC14::textToEgammaEnum(topConfig->electronIDLoose());
         objectSelection->electronSelection(new top::ElectronLikelihoodDC14(topConfig->electronPtcut(), topConfig->electronVetoLArCrack(), operatingPoint, operatingPointLoose, new top::ApproxPTVarCone(0.05, 0.)));
     } else {
         std::cout << "\nHo hum\n";
         std::cout << "Not sure it makes sense to use a mix of LH and cut-based electrons for the tight/loose definitions\n";
         std::cout << "Tight electron definition is " << topConfig->electronID() << "\n";
-        std::cout << "Loose electron definition is " << topConfig->electronIDBkg() << "\n";
+        std::cout << "Loose electron definition is " << topConfig->electronIDLoose() << "\n";
         std::cout << "If it does make sense, feel free to fix this\n";
         exit(1);
     }
