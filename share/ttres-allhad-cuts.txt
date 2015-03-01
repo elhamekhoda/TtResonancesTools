@@ -24,6 +24,8 @@ Systematics Nominal
 
 ElectronID LHTight
 ElectronIDLoose LHMedium
+FakesControlRegionDoLooseMC False
+OverlapRemovalLeptonDef Tight
 
 SELECTION allhad
 INITIAL

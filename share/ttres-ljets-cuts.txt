@@ -26,6 +26,8 @@ Systematics Nominal
 
 ElectronID Tight
 ElectronIDLoose Medium
+FakesControlRegionDoLooseMC False
+OverlapRemovalLeptonDef Tight
 
 SELECTION bejets
 INITIAL

@@ -1,3 +1,7 @@
+2015-03-01 John Morris <john.morris@cern.ch>
+	* Update config files
+	* TtResonancesTools-00-00-11
+
 2015-02-27 Danilo Ferreira de Lima <dferreir@cern.ch>
 	* Moved to the RelativePTVarCone as default isolation.
 	* TtResonancesTools-00-00-10
