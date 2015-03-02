@@ -15,8 +15,7 @@ namespace top {
 //Always initialise primitive types in the constructor
 TtresEventSaverFlatNtuple::TtresEventSaverFlatNtuple() {
   m_ghostjetcollection = "GhostAntiKt3TrackJet";
-  m_trackjetcollection = "AntiKt3PV0TrackJet";
-  m_trackjetcollection = "";
+  m_trackjetcollection = "AntiKt3PV0TrackJets";
 }
 
 TtresEventSaverFlatNtuple::~TtresEventSaverFlatNtuple() {
