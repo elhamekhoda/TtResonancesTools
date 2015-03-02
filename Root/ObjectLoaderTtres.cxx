@@ -40,8 +40,8 @@ top::TopObjectSelection* ObjectLoaderTtres::init(top::TopConfig* topConfig) {
 
     objectSelection->muonSelection(new top::MuonTtres(25000., 2.5, 3.0, new top::RelativePTVarCone(20, 0.05, 20, 99.)));
 
-    objectSelection->jetSelection(new top::JetTtres(25000., 2.5, 0.5));
-    objectSelection->largeJetSelection(new top::JetTtres(300000., 2., 0.));
+    objectSelection->jetSelection(new top::JetTtres(25000., 2.5, 0.5, "GhostAntiKt3TrackJet"));
+    objectSelection->largeJetSelection(new top::JetTtres(200000., 2., 0., "GhostAntiKt3TrackJet"));
 
     objectSelection->overlapRemovalPreSelection(new top::FirstOverlapRemovalIndicesTtres());
     objectSelection->overlapRemovalPostSelection(new top::OverlapRemovalIndicesTtres());

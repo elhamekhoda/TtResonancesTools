@@ -3,6 +3,7 @@
 #include "TtResonancesTools/NLargeJetTtresSLSelector.h"
 #include "TtResonancesTools/NLargeJetTtresAHSelector.h"
 #include "TtResonancesTools/NJetCloseLeptonSelector.h"
+#include "TtResonancesTools/NLargeJetVHresSelector.h"
 
 #include <iostream>
 
@@ -27,6 +28,8 @@ top::EventSelectorBase* TtResonancesToolsLoader::initTool(const std::string& /*n
         return new top::NLargeJetTtresAHSelector(param);
     else if (toolname == "JETCLOSELEPTON_N")
         return new top::NJetCloseLeptonSelector(param);
+    else if (toolname == "LARGEJETVHRES_N")
+        return new top::NLargeJetVHresSelector(param);
 
     return nullptr;
 }

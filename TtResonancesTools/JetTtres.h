@@ -3,6 +3,8 @@
 
 #include "TopObjectSelectionTools/JetSelectionBase.h"
 
+#include <string>
+
 namespace top {
 
 /**
@@ -18,7 +20,7 @@ public:
      * @param etamax The maximum eta cut.
      * @param jvfmin The minimum cut on the jet vertex fraction
      */
-    JetTtres(double ptcut, double etamax, double jvfmin);
+    JetTtres(double ptcut, double etamax, double jvfmin, const std::string &ghostCollectionName);
 
     ///Does nothing.
     ~JetTtres();
@@ -45,6 +47,9 @@ private:
 
     ///The minimum JVF cut for jets with pT < 50 GeV and |eta| < 2.4.
     double m_jvfmin;
+
+    ///The name of the ghost collection
+    std::string m_ghostCollectionName;
 };
 
 }
