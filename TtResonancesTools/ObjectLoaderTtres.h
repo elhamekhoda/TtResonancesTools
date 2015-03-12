@@ -19,7 +19,7 @@ public:
      *
      * @return Fully configured object selection.
      */
-    top::TopObjectSelection* init(top::TopConfig* topConfig);
+    top::TopObjectSelection* init(std::shared_ptr<top::TopConfig> topConfig);
 
     ClassDef(top::ObjectLoaderTtres, 0)
 };

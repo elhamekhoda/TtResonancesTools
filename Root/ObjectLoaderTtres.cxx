@@ -1,5 +1,5 @@
 #include "TtResonancesTools/ObjectLoaderTtres.h"
-
+#include "TopEvent/EventTools.h"
 #include "TopConfiguration/TopConfig.h"
 
 #include "TopObjectSelectionTools/TopObjectSelection.h"
@@ -17,8 +17,10 @@
 
 namespace top {
 
-top::TopObjectSelection* ObjectLoaderTtres::init(top::TopConfig* topConfig) {
-    top::TopObjectSelection* objectSelection = new top::TopObjectSelection(topConfig);
+top::TopObjectSelection* ObjectLoaderTtres::init(std::shared_ptr<top::TopConfig> topConfig) {
+    top::TopObjectSelection* objectSelection = new top::TopObjectSelection(topConfig->objectSelectionName());
+    top::check(objectSelection->setProperty( "config" , topConfig ) , "Failed to setProperty for top::TopObjectSelection" );
+    top::check(objectSelection->initialize() , "Failed to initialize top::TopObjectSelection" );    
 
     // cut based is tt resonances default, but use the top standard one if the user wants LH (but with mini isolation)
     if (topConfig->electronID().find("LH") == std::string::npos && topConfig->electronIDLoose().find("LH") == std::string::npos) {
