@@ -1,3 +1,7 @@
+2015-03-13 S. Marino Romano <sromanos@cern.ch>
+	* Adding TtbarPartonHistorySaver, for the recovery of the parton history in ttbar events
+	* TtResonancesTools-00-00-17
+
 2015-03-12 John Morris <john.morris@cern.ch>
 	* ElectronInJet
 	* TtResonancesTools-00-00-16
