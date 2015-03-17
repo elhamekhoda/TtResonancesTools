@@ -1,3 +1,8 @@
+2015-03-17 Danilo Ferreira de Lima <dferreir@cern.ch>
+	* Updated OR code to use John's new infrastructure suitable for
+	systmatics.
+	* TtResonancesTools-00-00-18
+
 2015-03-13 S. Marino Romano <sromanos@cern.ch>
 	* Adding TtbarPartonHistorySaver, for the recovery of the parton history in ttbar events
 	* TtResonancesTools-00-00-17
