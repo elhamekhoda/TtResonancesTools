@@ -28,7 +28,7 @@ ElectronID LHTight
 ElectronIDLoose LHMedium
 FakesControlRegionDoLooseMC False
 OverlapRemovalLeptonDef Tight
-ApplyElectronInJetSubtraction False
+ApplyElectronInJetSubtraction True
 
 SELECTION bejets
 INITIAL

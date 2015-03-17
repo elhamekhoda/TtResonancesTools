@@ -27,10 +27,10 @@ namespace top {
      
       std::string passTopCuts("");
       if (isLoose) {
-        passTopCuts = "passPreORSelection";
+        passTopCuts = "passPreORSelectionLoose";
       }
       if (!isLoose) {
-        passTopCuts = "passPreORSelectionLoose";
+        passTopCuts = "passPreORSelection";
       }     
 
       if (el) {
@@ -70,16 +70,6 @@ namespace top {
                   l_ljet.push_back(index_ljet);
               }
               ++index_ljet;
-          }
-      }
-
-      // Jets and Electrons - remove electron with dR < 0.2
-      // electrons direction is changed by el-jet OR tool
-      // this was done there before, but moved here, since
-      // we only have a shallow copy before the selection
-      for( auto e : IN_el ){
-          if( el->at(e)->auxdata<int>("PassElJetOR") == 0) {
-              l_el.remove( e );
           }
       }
 

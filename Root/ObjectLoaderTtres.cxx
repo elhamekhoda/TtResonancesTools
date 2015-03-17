@@ -12,7 +12,6 @@
 #include "TtResonancesTools/ElectronTtres.h"
 #include "TtResonancesTools/MuonTtres.h"
 #include "TtResonancesTools/JetTtres.h"
-#include "TtResonancesTools/FirstOverlapRemovalIndicesTtres.h"
 #include "TtResonancesTools/OverlapRemovalIndicesTtres.h"
 
 namespace top {
@@ -45,7 +44,6 @@ top::TopObjectSelection* ObjectLoaderTtres::init(std::shared_ptr<top::TopConfig>
     objectSelection->jetSelection(new top::JetTtres(25000., 2.5, 0.5, "GhostAntiKt3TrackJet"));
     objectSelection->largeJetSelection(new top::JetTtres(200000., 2., 0., "GhostAntiKt3TrackJet"));
 
-    objectSelection->overlapRemovalPreSelection(new top::FirstOverlapRemovalIndicesTtres());
     objectSelection->overlapRemovalPostSelection(new top::OverlapRemovalIndicesTtres());
 
     return objectSelection;
