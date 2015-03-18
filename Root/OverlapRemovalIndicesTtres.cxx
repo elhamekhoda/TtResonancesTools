@@ -9,15 +9,15 @@ namespace top {
   OverlapRemovalIndicesTtres::OverlapRemovalIndicesTtres() {
   }
   
-  void OverlapRemovalIndicesTtres::overlapremoval(xAOD::ElectronContainer* el,
-                                              xAOD::MuonContainer* mu,
-                                              xAOD::JetContainer* jet,
-                                              xAOD::JetContainer* ljet,
-                                              std::shared_ptr<std::vector<unsigned int>> OUT_el,
-                                              std::shared_ptr<std::vector<unsigned int>> OUT_mu,
-                                              std::shared_ptr<std::vector<unsigned int>> OUT_jet,
-                                              std::shared_ptr<std::vector<unsigned int>> OUT_ljet,
-                                              const bool isLoose)                                                 
+  void OverlapRemovalIndicesTtres::overlapremoval(const xAOD::ElectronContainer* el,
+                                                  const xAOD::MuonContainer* mu,
+                                                  const xAOD::JetContainer* jet,
+                                                  const xAOD::JetContainer* ljet,
+                                                  std::shared_ptr<std::vector<unsigned int>> OUT_el,
+                                                  std::shared_ptr<std::vector<unsigned int>> OUT_mu,
+                                                  std::shared_ptr<std::vector<unsigned int>> OUT_jet,
+                                                  std::shared_ptr<std::vector<unsigned int>> OUT_ljet,
+                                                  const bool isLoose)                                                 
   {
       // Work internally with std::list
       // What passed the pre-overlap removal selection?

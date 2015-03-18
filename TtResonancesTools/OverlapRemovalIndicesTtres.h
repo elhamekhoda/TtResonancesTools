@@ -22,15 +22,15 @@ public:
     OverlapRemovalIndicesTtres();
     virtual ~OverlapRemovalIndicesTtres(){}
 
-    virtual void overlapremoval(xAOD::ElectronContainer* el,
-            xAOD::MuonContainer* mu,
-            xAOD::JetContainer* jet,
-            xAOD::JetContainer* ljet,
-            std::shared_ptr<std::vector<unsigned int>> OUT_el,
-            std::shared_ptr<std::vector<unsigned int>> OUT_mu,
-            std::shared_ptr<std::vector<unsigned int>> OUT_jet,
-            std::shared_ptr<std::vector<unsigned int>> OUT_ljet,
-            const bool isLoose);
+    virtual void overlapremoval(const xAOD::ElectronContainer* el,
+                                const xAOD::MuonContainer* mu,
+                                const xAOD::JetContainer* jet,
+                                const xAOD::JetContainer* ljet,
+                                std::shared_ptr<std::vector<unsigned int>> OUT_el,
+                                std::shared_ptr<std::vector<unsigned int>> OUT_mu,
+                                std::shared_ptr<std::vector<unsigned int>> OUT_jet,
+                                std::shared_ptr<std::vector<unsigned int>> OUT_ljet,
+                                const bool isLoose);
                                
     virtual void print(std::ostream&) const;
 };

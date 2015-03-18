@@ -1,3 +1,7 @@
+2015-03-18 John Morris <john.morris@cern.ch>
+	* Use const xAOD collections in OR
+	* TtResonancesTools-00-00-19
+
 2015-03-17 Danilo Ferreira de Lima <dferreir@cern.ch>
 	* Updated OR code to use John's new infrastructure suitable for
 	systmatics.
