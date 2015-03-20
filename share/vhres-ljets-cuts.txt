@@ -32,6 +32,7 @@ Systematics Nominal
 ElectronID LHTight
 ElectronIDLoose LHMedium
 FakesControlRegionDoLooseMC False
+LooseMETCollectionName MET_RefFinal
 OverlapRemovalLeptonDef Tight
 ApplyElectronInJetSubtraction False
 
