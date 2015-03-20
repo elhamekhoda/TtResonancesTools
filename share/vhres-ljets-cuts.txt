@@ -1,8 +1,6 @@
 LibraryNames libTopEventSelectionTools libTopEventReconstructionTools libTtResonancesTools
 
 EventInfoName EventInfo
-#TruthCollectionName TruthParticle
-TruthCollectionName None
 ElectronCollectionName ElectronCollection
 MuonCollectionName Muons
 PhotonCollectionName None
@@ -16,10 +14,15 @@ TauCollectionName None
 PhotonCollectionName None
 METCollectionName MET_RefFinal
 
+#TruthCollectionName TruthParticle
+TruthCollectionName None
+TopPartonHistory False
+
 ObjectSelectionName top::ObjectLoaderTtres
 # OutputFormat top::EventSaverxAOD
 # OutputFormat top::EventSaverFlatNtuple
 OutputFormat top::TtresEventSaverFlatNtuple
+OutputEvents SelectedEvents
 OutputFilename output.root
 PerfStats No
 
