@@ -8,7 +8,7 @@ LargeJetCollectionName None
 LargeJetSubstructure None
 TauCollectionName None
 PhotonCollectionName None
-METCollectionName MET_RefFinal
+METCollectionName MET_RefFinalFix
 
 #TruthCollectionName TruthParticle
 TruthCollectionName None
