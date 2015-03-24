@@ -14,9 +14,9 @@ TauCollectionName None
 PhotonCollectionName None
 METCollectionName MET_RefFinalFix
 
-#TruthCollectionName TruthParticle
-TruthCollectionName None
-TopPartonHistory False
+TruthCollectionName TruthParticle
+#TruthCollectionName None
+TopPartonHistory True
 
 ObjectSelectionName top::ObjectLoaderTtres
 OutputFormat top::TtresEventSaverFlatNtuple
