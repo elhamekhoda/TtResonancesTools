@@ -19,7 +19,10 @@ namespace top {
 
       std::string m_ghostjetcollection;
       std::string m_trackjetcollection;
-
+      std::string m_akt4truthjetcollection;
+      std::string m_akt10truthjetcollection;
+      bool m_saveTruthJets;
+      bool m_savePartons;
 
       std::vector<int>   m_ljet_good;
 
@@ -52,6 +55,30 @@ namespace top {
       std::vector<int> m_trackjet_nghostb;
       std::vector<int> m_trackjet_nghostc;
 
+      // truth jet info
+      std::vector<float> m_akt4truthjet_pt;
+      std::vector<float> m_akt4truthjet_eta;
+      std::vector<float> m_akt4truthjet_phi;
+      std::vector<float> m_akt4truthjet_e;
+
+      std::vector<float> m_akt10truthjet_pt;
+      std::vector<float> m_akt10truthjet_eta;
+      std::vector<float> m_akt10truthjet_phi;
+      std::vector<float> m_akt10truthjet_e;
+
+      float m_MC_b_from_t_pt;
+      float m_MC_b_from_t_eta;
+      float m_MC_b_from_t_phi;
+      float m_MC_b_from_t_e;
+      int   m_MC_b_from_t_match;
+      int   m_MC_b_from_t_jetidx;
+      float m_MC_b_from_t_recodr;
+      float m_MC_b_from_t_truthdr;
+
+      float m_MC_b_from_t_jet_pt;
+      float m_MC_b_from_t_jet_eta;
+      float m_MC_b_from_t_jet_phi;
+      float m_MC_b_from_t_jet_e;
 
 
       ClassDef(TtresEventSaverFlatNtuple, 0);

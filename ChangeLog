@@ -1,3 +1,9 @@
+2015-03-30 Danilo Ferreira de Lima <dferreir@cern.ch>
+	* Added draft of the parton->truth->reco matching for
+	  chi^2 tuning.
+	* To be completed by Marino with remaining parton info.
+	* TtResonancesTools-00-00-24
+
 2015-03-30 John Morris <john.morris@cern.ch>
 	* Truth jets
 	* TtResonancesTools-00-00-23
