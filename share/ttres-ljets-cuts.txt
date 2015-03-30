@@ -16,6 +16,7 @@ METCollectionName MET_RefFinalFix
 
 TruthCollectionName TruthParticle
 #TruthCollectionName None
+TruthJetCollectionName AntiKt4TruthJets
 TopPartonHistory True
 
 ObjectSelectionName top::ObjectLoaderTtres

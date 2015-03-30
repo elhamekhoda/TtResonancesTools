@@ -16,6 +16,7 @@ METCollectionName MET_RefFinal
 
 #TruthCollectionName TruthParticle
 TruthCollectionName None
+TruthJetCollectionName None
 TopPartonHistory False
 
 ObjectSelectionName top::ObjectLoaderTtres
