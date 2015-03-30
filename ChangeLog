@@ -1,3 +1,7 @@
+2015-03-30 John Morris <john.morris@cern.ch>
+	* PDFInfo
+	* TtResonancesTools-00-00-25
+
 2015-03-30 Danilo Ferreira de Lima <dferreir@cern.ch>
 	* Added draft of the parton->truth->reco matching for
 	  chi^2 tuning.

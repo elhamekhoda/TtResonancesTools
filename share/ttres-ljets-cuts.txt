@@ -18,6 +18,7 @@ TruthCollectionName TruthParticle
 #TruthCollectionName None
 TruthJetCollectionName AntiKt4TruthJets
 TopPartonHistory True
+PDFInfo True
 
 ObjectSelectionName top::ObjectLoaderTtres
 OutputFormat top::TtresEventSaverFlatNtuple

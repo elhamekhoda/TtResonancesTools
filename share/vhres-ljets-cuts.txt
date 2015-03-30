@@ -18,6 +18,7 @@ METCollectionName MET_RefFinal
 TruthCollectionName None
 TruthJetCollectionName None
 TopPartonHistory False
+PDFInfo False
 
 ObjectSelectionName top::ObjectLoaderTtres
 # OutputFormat top::EventSaverxAOD
