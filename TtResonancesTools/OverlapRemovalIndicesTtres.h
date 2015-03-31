@@ -26,10 +26,14 @@ public:
                                 const xAOD::MuonContainer* mu,
                                 const xAOD::JetContainer* jet,
                                 const xAOD::JetContainer* ljet,
+				const xAOD::TauJetContainer* tau ,
+				const xAOD::PhotonContainer* photon,
                                 std::shared_ptr<std::vector<unsigned int>> OUT_el,
                                 std::shared_ptr<std::vector<unsigned int>> OUT_mu,
                                 std::shared_ptr<std::vector<unsigned int>> OUT_jet,
                                 std::shared_ptr<std::vector<unsigned int>> OUT_ljet,
+				std::shared_ptr<std::vector<unsigned int>>  OUT_tau,
+				std::shared_ptr<std::vector<unsigned int>>  OUT_photon,
                                 const bool isLoose);
                                
     virtual void print(std::ostream&) const;

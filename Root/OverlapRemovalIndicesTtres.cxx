@@ -13,17 +13,21 @@ namespace top {
                                                   const xAOD::MuonContainer* mu,
                                                   const xAOD::JetContainer* jet,
                                                   const xAOD::JetContainer* ljet,
+						  const xAOD::TauJetContainer* tau ,
+						  const xAOD::PhotonContainer* photon,
                                                   std::shared_ptr<std::vector<unsigned int>> OUT_el,
                                                   std::shared_ptr<std::vector<unsigned int>> OUT_mu,
                                                   std::shared_ptr<std::vector<unsigned int>> OUT_jet,
                                                   std::shared_ptr<std::vector<unsigned int>> OUT_ljet,
+						  std::shared_ptr<std::vector<unsigned int>>  OUT_tau,
+						  std::shared_ptr<std::vector<unsigned int>>  OUT_photon,
                                                   const bool isLoose)                                                 
   {
       // Work internally with std::list
       // What passed the pre-overlap removal selection?
-      std::vector<unsigned int> IN_el,IN_mu,IN_jet,IN_ljet;
-      std::list<unsigned int> l_el,l_mu,l_jet,l_ljet;
-      unsigned int index_el(0),index_mu(0),index_jet(0),index_ljet(0);
+      std::vector<unsigned int> IN_el,IN_mu,IN_jet,IN_ljet,IN_tau,IN_photon;
+      std::list<unsigned int> l_el,l_mu,l_jet,l_ljet,l_tau,l_photon;
+      unsigned int index_el(0),index_mu(0),index_jet(0),index_ljet(0),index_tau(0),index_photon(0);
      
       std::string passTopCuts("");
       if (isLoose) {
@@ -73,6 +77,26 @@ namespace top {
           }
       }
 
+      if (tau) {
+	for( auto x : *tau ){
+	  if( x->auxdataConst< char >(passTopCuts) == 1 ){
+	    IN_tau.push_back(index_tau);
+	    l_tau.push_back(index_tau);
+	  }
+	  ++index_tau;
+	}
+      }
+
+      if (photon) {
+	for( auto x : *photon ){
+	  if( x->auxdataConst< char >(passTopCuts) == 1 ){
+	    IN_photon.push_back(index_photon);
+	    l_photon.push_back(index_photon);
+	  }
+	  ++index_photon;
+	}
+      }
+
       // Jets and Muons - remove muon with dR < 0.4
       for( auto j : IN_jet ){
           for( auto m : IN_mu ){
@@ -87,11 +111,15 @@ namespace top {
       OUT_mu->clear();
       OUT_jet->clear();
       OUT_ljet->clear();
+      OUT_tau->clear();
+      OUT_photon->clear();      
 
       for( auto i : l_el  ){OUT_el->push_back(i); }
       for( auto i : l_mu  ){OUT_mu->push_back(i); }
       for( auto i : l_jet ){OUT_jet->push_back(i);}
       for( auto i : l_ljet ){OUT_ljet->push_back(i);}
+      for( auto i : l_tau ){OUT_tau->push_back(i);}
+      for( auto i : l_photon ){OUT_photon->push_back(i);}
   }
 
   void OverlapRemovalIndicesTtres::print(std::ostream& os) const {
