@@ -1,4 +1,16 @@
 import TopExamples.grid
+TopExamples.grid.Add("13TeV_FS_EXOT4_Zprime500").datasets = [
+'mc14_13TeV.110901.Pythia8_AU2MSTW2008LO_zprime500_tt.merge.DAOD_EXOT4.e3238_s1982_s2008_r5787_r5853_p1845/',
+]
+TopExamples.grid.Add("13TeV_FS_EXOT4_Zprime2000").datasets = [
+'mc14_13TeV.110907.Pythia8_AU2MSTW2008LO_zprime2000_tt.merge.DAOD_EXOT4.e3238_s1982_s2008_r5787_r5853_p1845/',
+]
+TopExamples.grid.Add("13TeV_FS_EXOT4_Zprime3000").datasets = [
+'mc14_13TeV.110910.Pythia8_AU2MSTW2008LO_zprime3000_tt.merge.DAOD_EXOT4.e3238_s1982_s2008_r5787_r5853_p1845/',
+]
+TopExamples.grid.Add("13TeV_FS_EXOT4_Zprime5000").datasets = [
+'mc14_13TeV.110900.Pythia8_AU2MSTW2008LO_zprime5000_tt.merge.DAOD_EXOT4.e3238_s1982_s2008_r5787_r5853_p1845/',
+]
 TopExamples.grid.Add("13TeV_FS_EXOT4_ttbarPowhegPythia").datasets = [
 'mc14_13TeV:mc14_13TeV.110401.PowhegPythia_P2012_ttbar_nonallhad.merge.DAOD_EXOT4.e2928_s1982_s2008_r5787_r5853_p1845/',
 ]
