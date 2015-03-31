@@ -1,3 +1,7 @@
+2015-03-31 Tom Neep <tom.neep@cern.ch>
+	* Updating overlap removal interface to include taus and photons
+	* TtResonancesTools-00-00-27
+
 2015-03-31 Danilo Ferreira de Lima <dferreir@cern.ch>
 	* Added names of signal samples in the share directory.
 	* TtResonancesTools-00-00-26
