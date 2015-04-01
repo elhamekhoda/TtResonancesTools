@@ -1,6 +1,5 @@
 LibraryNames libTopEventSelectionTools libTopEventReconstructionTools libTtResonancesTools
 
-EventInfoName EventInfo
 ElectronCollectionName ElectronCollection
 MuonCollectionName Muons
 JetCollectionName AntiKt4LCTopoJets
