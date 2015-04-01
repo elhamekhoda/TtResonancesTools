@@ -1,7 +1,5 @@
 #include "TtResonancesTools/TtresEventSaverFlatNtuple.h"
 
-#include "TopEvent/Event.h"
-
 #include "TopEventSelectionTools/TreeManager.h"
 
 #include "xAODRootAccess/TEvent.h"
@@ -95,19 +93,91 @@ void TtresEventSaverFlatNtuple::initialize(std::shared_ptr<top::TopConfig> confi
         }
 
         if (m_savePartons) {
+	
+	    // Partons
             systematicTree->makeOutputVariable(m_MC_b_from_t_pt,      "MC_b_from_t_pt");
             systematicTree->makeOutputVariable(m_MC_b_from_t_eta,     "MC_b_from_t_eta");
             systematicTree->makeOutputVariable(m_MC_b_from_t_phi,     "MC_b_from_t_phi");
             systematicTree->makeOutputVariable(m_MC_b_from_t_e,       "MC_b_from_t_e");
-            systematicTree->makeOutputVariable(m_MC_b_from_t_match,   "MC_b_from_t_match");
             systematicTree->makeOutputVariable(m_MC_b_from_t_jetidx,  "MC_b_from_t_jetidx");
             systematicTree->makeOutputVariable(m_MC_b_from_t_recodr,  "MC_b_from_t_recodr");
             systematicTree->makeOutputVariable(m_MC_b_from_t_truthdr, "MC_b_from_t_truthdr");
+	    
+            systematicTree->makeOutputVariable(m_MC_b_from_tbar_pt,      "MC_b_from_tbar_pt");
+            systematicTree->makeOutputVariable(m_MC_b_from_tbar_eta,     "MC_b_from_tbar_eta");
+            systematicTree->makeOutputVariable(m_MC_b_from_tbar_phi,     "MC_b_from_tbar_phi");
+            systematicTree->makeOutputVariable(m_MC_b_from_tbar_e,       "MC_b_from_tbar_e");
+            systematicTree->makeOutputVariable(m_MC_b_from_tbar_jetidx,  "MC_b_from_tbar_jetidx");
+            systematicTree->makeOutputVariable(m_MC_b_from_tbar_recodr,  "MC_b_from_tbar_recodr");
+            systematicTree->makeOutputVariable(m_MC_b_from_tbar_truthdr, "MC_b_from_tbar_truthdr");
 
-            systematicTree->makeOutputVariable(m_MC_b_from_t_jet_pt,  "MC_b_from_t_jet_pt");
-            systematicTree->makeOutputVariable(m_MC_b_from_t_jet_eta, "MC_b_from_t_jet_eta");
-            systematicTree->makeOutputVariable(m_MC_b_from_t_jet_phi, "MC_b_from_t_jet_phi");
-            systematicTree->makeOutputVariable(m_MC_b_from_t_jet_e,   "MC_b_from_t_jet_e");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_pt,      "MC_Wdecay1_from_t_pt");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_eta,     "MC_Wdecay1_from_t_eta");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_phi,     "MC_Wdecay1_from_t_phi");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_e,       "MC_Wdecay1_from_t_e");
+	    systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_pdgId,   "MC_Wdecay1_from_t_pdgId");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_jetidx,  "MC_Wdecay1_from_t_jetidx");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_recodr,  "MC_Wdecay1_from_t_recodr");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_truthdr, "MC_Wdecay1_from_t_truthdr");
+	    
+	    systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_pt,      "MC_Wdecay2_from_t_pt");
+            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_eta,     "MC_Wdecay2_from_t_eta");
+            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_phi,     "MC_Wdecay2_from_t_phi");
+            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_e,       "MC_Wdecay2_from_t_e");
+	    systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_pdgId,   "MC_Wdecay2_from_t_pdgId");
+            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_jetidx,  "MC_Wdecay2_from_t_jetidx");
+            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_recodr,  "MC_Wdecay2_from_t_recodr");
+            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_truthdr, "MC_Wdecay2_from_t_truthdr");
+	    
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_pt,      "MC_Wdecay1_from_tbar_pt");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_eta,     "MC_Wdecay1_from_tbar_eta");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_phi,     "MC_Wdecay1_from_tbar_phi");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_e,       "MC_Wdecay1_from_tbar_e");
+	    systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_pdgId,   "MC_Wdecay1_from_tbar_pdgId");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_jetidx,  "MC_Wdecay1_from_tbar_jetidx");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_recodr,  "MC_Wdecay1_from_tbar_recodr");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_truthdr, "MC_Wdecay1_from_tbar_truthdr");
+	    
+	    systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_pt,      "MC_Wdecay2_from_tbar_pt");
+            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_eta,     "MC_Wdecay2_from_tbar_eta");
+            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_phi,     "MC_Wdecay2_from_tbar_phi");
+            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_e,       "MC_Wdecay2_from_tbar_e");
+	    systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_pdgId,   "MC_Wdecay2_from_tbar_pdgId");
+            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_jetidx,  "MC_Wdecay2_from_tbar_jetidx");
+            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_recodr,  "MC_Wdecay2_from_tbar_recodr");
+            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_truthdr, "MC_Wdecay2_from_tbar_truthdr");
+	    
+	    //Matched jets	
+            systematicTree->makeOutputVariable(m_MA_b_from_t_pt,  "MA_b_from_t_pt");
+            systematicTree->makeOutputVariable(m_MA_b_from_t_eta, "MA_b_from_t_eta");
+            systematicTree->makeOutputVariable(m_MA_b_from_t_phi, "MA_b_from_t_phi");
+            systematicTree->makeOutputVariable(m_MA_b_from_t_e,   "MA_b_from_t_e");
+	    
+	    systematicTree->makeOutputVariable(m_MA_b_from_tbar_pt,  "MA_b_from_tbar_pt");
+            systematicTree->makeOutputVariable(m_MA_b_from_tbar_eta, "MA_b_from_tbar_eta");
+            systematicTree->makeOutputVariable(m_MA_b_from_tbar_phi, "MA_b_from_tbar_phi");
+            systematicTree->makeOutputVariable(m_MA_b_from_tbar_e,   "MA_b_from_tbar_e");
+	    
+	    systematicTree->makeOutputVariable(m_MA_Wdecay1_from_t_pt,  "MA_Wdecay1_from_t_pt");
+            systematicTree->makeOutputVariable(m_MA_Wdecay1_from_t_eta, "MA_Wdecay1_from_t_eta");
+            systematicTree->makeOutputVariable(m_MA_Wdecay1_from_t_phi, "MA_Wdecay1_from_t_phi");
+            systematicTree->makeOutputVariable(m_MA_Wdecay1_from_t_e,   "MA_Wdecay1_from_t_e");
+	    
+	    systematicTree->makeOutputVariable(m_MA_Wdecay2_from_t_pt,  "MA_Wdecay2_from_t_pt");
+            systematicTree->makeOutputVariable(m_MA_Wdecay2_from_t_eta, "MA_Wdecay2_from_t_eta");
+            systematicTree->makeOutputVariable(m_MA_Wdecay2_from_t_phi, "MA_Wdecay2_from_t_phi");
+            systematicTree->makeOutputVariable(m_MA_Wdecay2_from_t_e,   "MA_Wdecay2_from_t_e");
+	    
+	    systematicTree->makeOutputVariable(m_MA_Wdecay1_from_tbar_pt,  "MA_Wdecay1_from_tbar_pt");
+            systematicTree->makeOutputVariable(m_MA_Wdecay1_from_tbar_eta, "MA_Wdecay1_from_tbar_eta");
+            systematicTree->makeOutputVariable(m_MA_Wdecay1_from_tbar_phi, "MA_Wdecay1_from_tbar_phi");
+            systematicTree->makeOutputVariable(m_MA_Wdecay1_from_tbar_e,   "MA_Wdecay1_from_tbar_e");
+	    
+	    systematicTree->makeOutputVariable(m_MA_Wdecay2_from_tbar_pt,  "MA_Wdecay2_from_tbar_pt");
+            systematicTree->makeOutputVariable(m_MA_Wdecay2_from_tbar_eta, "MA_Wdecay2_from_tbar_eta");
+            systematicTree->makeOutputVariable(m_MA_Wdecay2_from_tbar_phi, "MA_Wdecay2_from_tbar_phi");
+            systematicTree->makeOutputVariable(m_MA_Wdecay2_from_tbar_e,   "MA_Wdecay2_from_tbar_e");	    
+	    
         }
 
     }
@@ -301,20 +371,89 @@ void TtresEventSaverFlatNtuple::saveEvent(const top::Event& event, xAOD::TEvent&
         }
     }
 
-    m_MC_b_from_t_pt     = -999;
-    m_MC_b_from_t_eta    = -999;
-    m_MC_b_from_t_phi    = -999;
-    m_MC_b_from_t_e      = -999;
-    m_MC_b_from_t_match  = 0;
-    m_MC_b_from_t_jetidx = -1;
-    m_MC_b_from_t_recodr = -1;
-    m_MC_b_from_t_truthdr= -1;
+    m_MC_b_from_t_pt       = -5000;
+    m_MC_b_from_t_eta      = -5000;
+    m_MC_b_from_t_phi      = -5000;
+    m_MC_b_from_t_e        = -5000;
+    m_MC_b_from_t_jetidx   = -1;
+    m_MC_b_from_t_recodr   = -1;
+    m_MC_b_from_t_truthdr  = -1;
+    
+    m_MC_b_from_tbar_pt	     = -5000;
+    m_MC_b_from_tbar_eta     = -5000;
+    m_MC_b_from_tbar_phi     = -5000;
+    m_MC_b_from_tbar_e	     = -5000;
+    m_MC_b_from_tbar_jetidx  = -1;
+    m_MC_b_from_tbar_recodr  = -1;
+    m_MC_b_from_tbar_truthdr = -1;    
+    
+    m_MC_Wdecay1_from_t_pt       = -5000;
+    m_MC_Wdecay1_from_t_eta      = -5000;
+    m_MC_Wdecay1_from_t_phi      = -5000;
+    m_MC_Wdecay1_from_t_e        = -5000;
+    m_MC_Wdecay1_from_t_pdgId    = 0;
+    m_MC_Wdecay1_from_t_jetidx   = -1;
+    m_MC_Wdecay1_from_t_recodr   = -1;
+    m_MC_Wdecay1_from_t_truthdr  = -1;
+    
+    m_MC_Wdecay2_from_t_pt       = -5000;
+    m_MC_Wdecay2_from_t_eta      = -5000;
+    m_MC_Wdecay2_from_t_phi      = -5000;
+    m_MC_Wdecay2_from_t_e        = -5000;
+    m_MC_Wdecay2_from_t_pdgId    = 0;
+    m_MC_Wdecay2_from_t_jetidx   = -1;
+    m_MC_Wdecay2_from_t_recodr   = -1;
+    m_MC_Wdecay2_from_t_truthdr  = -1;
+    
+    m_MC_Wdecay1_from_tbar_pt	   = -5000;
+    m_MC_Wdecay1_from_tbar_eta	   = -5000;
+    m_MC_Wdecay1_from_tbar_phi	   = -5000;
+    m_MC_Wdecay1_from_tbar_e	   = -5000;
+    m_MC_Wdecay1_from_tbar_pdgId   = 0;
+    m_MC_Wdecay1_from_tbar_jetidx  = -1;
+    m_MC_Wdecay1_from_tbar_recodr  = -1;
+    m_MC_Wdecay1_from_tbar_truthdr = -1;
+        
+    m_MC_Wdecay2_from_tbar_pt	   = -5000;
+    m_MC_Wdecay2_from_tbar_eta	   = -5000;
+    m_MC_Wdecay2_from_tbar_phi	   = -5000;
+    m_MC_Wdecay2_from_tbar_e	   = -5000;
+    m_MC_Wdecay2_from_tbar_pdgId   = 0;
+    m_MC_Wdecay2_from_tbar_jetidx  = -1;
+    m_MC_Wdecay2_from_tbar_recodr  = -1;
+    m_MC_Wdecay2_from_tbar_truthdr = -1;    
+    
+    // Matched jets
+    m_MA_b_from_t_pt = -5000;
+    m_MA_b_from_t_eta= -5000;
+    m_MA_b_from_t_phi= -5000;
+    m_MA_b_from_t_e  = -5000;
+    
+    m_MA_b_from_tbar_pt  = -5000;
+    m_MA_b_from_tbar_eta = -5000;
+    m_MA_b_from_tbar_phi = -5000;
+    m_MA_b_from_tbar_e   = -5000;
+    
+    m_MA_Wdecay1_from_t_pt	 = -5000;
+    m_MA_Wdecay1_from_t_eta  = -5000;
+    m_MA_Wdecay1_from_t_phi  = -5000;
+    m_MA_Wdecay1_from_t_e	 = -5000;
 
-    m_MC_b_from_t_jet_pt = -999;
-    m_MC_b_from_t_jet_eta= -999;
-    m_MC_b_from_t_jet_phi= -999;
-    m_MC_b_from_t_jet_e  = -999;
+    m_MA_Wdecay2_from_t_pt	= -5000;
+    m_MA_Wdecay2_from_t_eta = -5000;
+    m_MA_Wdecay2_from_t_phi = -5000;
+    m_MA_Wdecay2_from_t_e	= -5000;
 
+    m_MA_Wdecay1_from_tbar_pt  = -5000;
+    m_MA_Wdecay1_from_tbar_eta = -5000;
+    m_MA_Wdecay1_from_tbar_phi = -5000;
+    m_MA_Wdecay1_from_tbar_e   = -5000;
+
+    m_MA_Wdecay2_from_tbar_pt   = -5000;
+    m_MA_Wdecay2_from_tbar_eta  = -5000;
+    m_MA_Wdecay2_from_tbar_phi  = -5000;
+    m_MA_Wdecay2_from_tbar_e    = -5000; 
+    
     if (m_savePartons) {
         const xAOD::JetContainer* akt4truthjets = nullptr;
         top::check(xaodEvent.retrieve(akt4truthjets, m_akt4truthjetcollection), "FAILURE");
@@ -328,80 +467,261 @@ void TtresEventSaverFlatNtuple::saveEvent(const top::Event& event, xAOD::TEvent&
         //top::check(xaodEvent.retrieve(topPartonCont, m_config->sgKeyTopPartonHistory()), "FAILURE"); //m_config is private ...
         top::check(xaodEvent.retrieve(topPartonCont, "TopPartonHistory"), "FAILURE");
         const xAOD::TopPartonHistory *topParton = topPartonCont->at(0);
-        
 
         // get partons
-        // b from t
         TLorentzVector b_from_t;
+	TLorentzVector b_from_tbar;
+	TLorentzVector Wdecay1_from_t;
+	TLorentzVector Wdecay2_from_t;
+	TLorentzVector Wdecay1_from_tbar;
+	TLorentzVector Wdecay2_from_tbar;	
+	
         b_from_t.SetPtEtaPhiM(topParton->MC_b_from_t_pt(), topParton->MC_b_from_t_eta(), topParton->MC_b_from_t_phi(), topParton->MC_b_from_t_m());
-
+	b_from_tbar.SetPtEtaPhiM(topParton->MC_b_from_tbar_pt(), topParton->MC_b_from_tbar_eta(), topParton->MC_b_from_tbar_phi(), topParton->MC_b_from_tbar_m());
+	
+	Wdecay1_from_t.SetPtEtaPhiM(topParton->MC_Wdecay1_from_t_pt(), topParton->MC_Wdecay1_from_t_eta(), topParton->MC_Wdecay1_from_t_phi(), topParton->MC_Wdecay1_from_t_m());
+	Wdecay2_from_t.SetPtEtaPhiM(topParton->MC_Wdecay2_from_t_pt(), topParton->MC_Wdecay2_from_t_eta(), topParton->MC_Wdecay2_from_t_phi(), topParton->MC_Wdecay2_from_t_m());
+	
+	Wdecay1_from_tbar.SetPtEtaPhiM(topParton->MC_Wdecay1_from_tbar_pt(), topParton->MC_Wdecay1_from_tbar_eta(), topParton->MC_Wdecay1_from_tbar_phi(), topParton->MC_Wdecay1_from_tbar_m());
+	Wdecay2_from_tbar.SetPtEtaPhiM(topParton->MC_Wdecay2_from_tbar_pt(), topParton->MC_Wdecay2_from_tbar_eta(), topParton->MC_Wdecay2_from_tbar_phi(), topParton->MC_Wdecay2_from_tbar_m());
+		
         // match parton to truth
-        float truth_MC_b_from_t_dr = 999;
-        int   truth_MC_b_from_t_idx = -1;
-        float reco_MC_b_from_t_dr = 999;
-        int   reco_MC_b_from_t_idx = -1;
-
+        float truth_MC_b_from_t_dr(0.4);
+        int   truth_MC_b_from_t_idx(-1);
+	
+	float truth_MC_b_from_tbar_dr(0.4);
+        int   truth_MC_b_from_tbar_idx(-1);
+	
+	float truth_MC_Wdecay1_from_t_dr(0.4);
+        int   truth_MC_Wdecay1_from_t_idx(-1);
+	
+	float truth_MC_Wdecay2_from_t_dr(0.4);
+        int   truth_MC_Wdecay2_from_t_idx(-1);
+	
+	float truth_MC_Wdecay1_from_tbar_dr(0.4);
+        int   truth_MC_Wdecay1_from_tbar_idx(-1);	
+	
+	float truth_MC_Wdecay2_from_tbar_dr(0.4);
+        int   truth_MC_Wdecay2_from_tbar_idx(-1);	
+	
+        float reco_MC_b_from_t_dr(0.4);
+        int   reco_MC_b_from_t_idx(-1);
+	
+	float reco_MC_b_from_tbar_dr(0.4);
+        int   reco_MC_b_from_tbar_idx(-1);
+	
+	float reco_MC_Wdecay1_from_t_dr(0.4);
+        int   reco_MC_Wdecay1_from_t_idx(-1);
+	
+	float reco_MC_Wdecay2_from_t_dr(0.4);
+        int   reco_MC_Wdecay2_from_t_idx(-1);
+	
+	float reco_MC_Wdecay1_from_tbar_dr(0.4);
+        int   reco_MC_Wdecay1_from_tbar_idx(-1);
+	
+	float reco_MC_Wdecay2_from_tbar_dr(0.4);
+        int   reco_MC_Wdecay2_from_tbar_idx(-1);
+	
         i = 0;
         for (xAOD::JetContainer::const_iterator jet_itr = akt4truthjets->begin(); jet_itr != akt4truthjets->end(); ++jet_itr) {
             const xAOD::Jet* akt4truthjetPtr = *jet_itr;
             // cuts on truth jet
-            //if (akt4truthjetPtr->pt() < 25e3) {
-            //    ++i;
-            //    continue;
-            //}
+	    if (akt4truthjetPtr->pt() < 7e3) {// same value than for 8TeV analysis. To be tuned latter
+		   ++i;
+		   continue;
+	    }
             //if (std::fabs(akt4truthjetPtr->eta()) < 2.5) {
             //    ++i;
             //    continue;
             //}
+	    
+	    TLorentzVector temp =  akt4truthjetPtr->p4();
 
             // check the dr between this parton and the truth jet
-            float dr = akt4truthjetPtr->p4().DeltaR(b_from_t);
-            if (dr < truth_MC_b_from_t_dr) {
-                truth_MC_b_from_t_dr = dr;
+            float b_from_t_dr = temp.DeltaR(b_from_t);
+            if (b_from_t_dr < truth_MC_b_from_t_dr) {
+                truth_MC_b_from_t_dr = b_from_t_dr;
                 truth_MC_b_from_t_idx = i;
             }
-
-            // do the same for other partons
-            // (same as code above for b_from_antit, W quarks, etc
-
+	    
+	    float b_from_tbar_dr = temp.DeltaR(b_from_tbar);
+            if (b_from_tbar_dr < truth_MC_b_from_tbar_dr) {
+                truth_MC_b_from_tbar_dr = b_from_tbar_dr;
+                truth_MC_b_from_tbar_idx = i;
+            }
+	    
+	    if(topParton->MC_Wdecay1_from_t_pdgId()!=0 && fabs(topParton->MC_Wdecay1_from_t_pdgId())<6){
+	      float Wdecay1_from_t_dr = temp.DeltaR(Wdecay1_from_t);
+              if (Wdecay1_from_t_dr < truth_MC_Wdecay1_from_t_dr) {
+                truth_MC_Wdecay1_from_t_dr = Wdecay1_from_t_dr;
+                truth_MC_Wdecay1_from_t_idx = i;
+              }
+	    }
+	    
+	    if(topParton->MC_Wdecay2_from_t_pdgId()!=0 && fabs(topParton->MC_Wdecay2_from_t_pdgId())<6){
+	      float Wdecay2_from_t_dr = temp.DeltaR(Wdecay2_from_t);
+              if (Wdecay2_from_t_dr < truth_MC_Wdecay2_from_t_dr) {
+                truth_MC_Wdecay2_from_t_dr = Wdecay2_from_t_dr;
+                truth_MC_Wdecay2_from_t_idx = i;
+              }
+	    }
+	    
+	    if(topParton->MC_Wdecay1_from_tbar_pdgId()!=0 && fabs(topParton->MC_Wdecay1_from_tbar_pdgId())<6){	    
+	      float Wdecay1_from_tbar_dr = temp.DeltaR(Wdecay1_from_tbar);
+              if (Wdecay1_from_tbar_dr < truth_MC_Wdecay1_from_tbar_dr) {
+                truth_MC_Wdecay1_from_tbar_dr = Wdecay1_from_tbar_dr;
+                truth_MC_Wdecay1_from_tbar_idx = i;
+              }
+	    }
+	    
+	    if(topParton->MC_Wdecay2_from_tbar_pdgId()!=0 && fabs(topParton->MC_Wdecay2_from_tbar_pdgId())<6){
+	      float Wdecay2_from_tbar_dr = temp.DeltaR(Wdecay2_from_tbar);
+              if (Wdecay2_from_tbar_dr < truth_MC_Wdecay2_from_tbar_dr) {
+                truth_MC_Wdecay2_from_tbar_dr = Wdecay2_from_tbar_dr;
+                truth_MC_Wdecay2_from_tbar_idx = i;
+              }
+            }
+	      
             ++i;
         }
         // in each case, try to match it to reco
-        if (truth_MC_b_from_t_idx >= 0) { // it was matched to truth
-            // match it to reco
-            i = 0;
-            for (xAOD::JetContainer::const_iterator jet_itr = event.m_jets.begin(); jet_itr != event.m_jets.end(); ++jet_itr) {
-                const xAOD::Jet* jetPtr = *jet_itr;
-
-                // check the dr between this parton's truth jet and the reco jet
-                float dr = akt4truthjets->at(truth_MC_b_from_t_idx)->p4().DeltaR(jetPtr->p4());
-                if (dr < reco_MC_b_from_t_dr) {
-                    reco_MC_b_from_t_dr = dr;
-                    reco_MC_b_from_t_idx = i;
-                }
-                i++;
-            }
-        }
+	
+	// b from t
+        if (truth_MC_b_from_t_idx >= 0) 
+	    RecoJetMatching(event, akt4truthjets->at(truth_MC_b_from_t_idx), reco_MC_b_from_t_dr, reco_MC_b_from_t_idx);
+        
         m_MC_b_from_t_pt   = b_from_t.Perp();
         m_MC_b_from_t_eta  = b_from_t.Eta();
         m_MC_b_from_t_phi  = b_from_t.Phi();
         m_MC_b_from_t_e    = b_from_t.E();
-        m_MC_b_from_t_match= (reco_MC_b_from_t_idx >= 0 && reco_MC_b_from_t_dr < 0.4 && truth_MC_b_from_t_dr < 0.4);
-        m_MC_b_from_t_jetidx= reco_MC_b_from_t_idx;
-        m_MC_b_from_t_recodr= reco_MC_b_from_t_dr;
-        m_MC_b_from_t_truthdr= truth_MC_b_from_t_dr;
-        if (m_MC_b_from_t_match) {
-          // in principle all the information below is available 
-          // from jet_pt[MC_b_from_t_jetidx], jet_eta[MC_b_from_t_jetidx], jet_phi[MC_b_from_t_jetidx] and jet_e[MC_b_from_t_jetidx]
-          // so it could be removed, unless it is easier to have it directly as a float
-          m_MC_b_from_t_jet_pt = event.m_jets.at(reco_MC_b_from_t_idx)->pt();
-          m_MC_b_from_t_jet_eta = event.m_jets.at(reco_MC_b_from_t_idx)->eta();
-          m_MC_b_from_t_jet_phi = event.m_jets.at(reco_MC_b_from_t_idx)->phi();
-          m_MC_b_from_t_jet_e = event.m_jets.at(reco_MC_b_from_t_idx)->e();
+        m_MC_b_from_t_jetidx   = reco_MC_b_from_t_idx;
+        m_MC_b_from_t_recodr   = reco_MC_b_from_t_dr;
+        m_MC_b_from_t_truthdr  = truth_MC_b_from_t_dr;
+        if (m_MC_b_from_t_jetidx>=0) {
+          m_MA_b_from_t_pt  = event.m_jets.at(reco_MC_b_from_t_idx)->pt();
+          m_MA_b_from_t_eta = event.m_jets.at(reco_MC_b_from_t_idx)->eta();
+          m_MA_b_from_t_phi = event.m_jets.at(reco_MC_b_from_t_idx)->phi();
+          m_MA_b_from_t_e   = event.m_jets.at(reco_MC_b_from_t_idx)->e();
         }
+	
+	// b from tbar	
+	if (truth_MC_b_from_tbar_idx >= 0) 
+	    RecoJetMatching(event, akt4truthjets->at(truth_MC_b_from_tbar_idx), reco_MC_b_from_tbar_dr, reco_MC_b_from_tbar_idx);
+        
+        m_MC_b_from_tbar_pt   = b_from_tbar.Perp();
+        m_MC_b_from_tbar_eta  = b_from_tbar.Eta();
+        m_MC_b_from_tbar_phi  = b_from_tbar.Phi();
+        m_MC_b_from_tbar_e    = b_from_tbar.E();
+        m_MC_b_from_tbar_jetidx  = reco_MC_b_from_tbar_idx;
+
+	m_MC_b_from_tbar_recodr  = reco_MC_b_from_tbar_dr;
+        m_MC_b_from_tbar_truthdr = truth_MC_b_from_tbar_dr;
+        if (m_MC_b_from_tbar_jetidx>=0) {         
+          m_MA_b_from_tbar_pt  = event.m_jets.at(reco_MC_b_from_tbar_idx)->pt();
+          m_MA_b_from_tbar_eta = event.m_jets.at(reco_MC_b_from_tbar_idx)->eta();
+          m_MA_b_from_tbar_phi = event.m_jets.at(reco_MC_b_from_tbar_idx)->phi();
+          m_MA_b_from_tbar_e   = event.m_jets.at(reco_MC_b_from_tbar_idx)->e();
+        }
+	
+	// Wdecay1 from t
+        if (truth_MC_Wdecay1_from_t_idx >= 0) 
+	    RecoJetMatching(event, akt4truthjets->at(truth_MC_Wdecay1_from_t_idx), reco_MC_Wdecay1_from_t_dr, reco_MC_Wdecay1_from_t_idx);
+        
+        m_MC_Wdecay1_from_t_pt   = b_from_t.Perp();
+        m_MC_Wdecay1_from_t_eta  = b_from_t.Eta();
+        m_MC_Wdecay1_from_t_phi  = b_from_t.Phi();
+        m_MC_Wdecay1_from_t_e    = b_from_t.E();
+	m_MC_Wdecay1_from_t_pdgId   = topParton->MC_Wdecay1_from_t_pdgId();
+        m_MC_Wdecay1_from_t_jetidx  = reco_MC_Wdecay1_from_t_idx;
+        m_MC_Wdecay1_from_t_recodr  = reco_MC_Wdecay1_from_t_dr;
+        m_MC_Wdecay1_from_t_truthdr = truth_MC_Wdecay1_from_t_dr;
+	
+        if (m_MC_Wdecay1_from_t_jetidx>=0) {         
+          m_MA_Wdecay1_from_t_pt  = event.m_jets.at(reco_MC_Wdecay1_from_t_idx)->pt();
+          m_MA_Wdecay1_from_t_eta = event.m_jets.at(reco_MC_Wdecay1_from_t_idx)->eta();
+          m_MA_Wdecay1_from_t_phi = event.m_jets.at(reco_MC_Wdecay1_from_t_idx)->phi();
+          m_MA_Wdecay1_from_t_e   = event.m_jets.at(reco_MC_Wdecay1_from_t_idx)->e();
+        }
+	
+	// Wdecay2 from t
+        if (truth_MC_Wdecay2_from_t_idx >= 0) 
+	    RecoJetMatching(event, akt4truthjets->at(truth_MC_Wdecay2_from_t_idx), reco_MC_Wdecay2_from_t_dr, reco_MC_Wdecay2_from_t_idx);
+	    
+        m_MC_Wdecay2_from_t_pt   = b_from_t.Perp();
+        m_MC_Wdecay2_from_t_eta  = b_from_t.Eta();
+        m_MC_Wdecay2_from_t_phi  = b_from_t.Phi();
+        m_MC_Wdecay2_from_t_e    = b_from_t.E();
+	m_MC_Wdecay2_from_t_pdgId    = topParton->MC_Wdecay2_from_t_pdgId();
+        m_MC_Wdecay2_from_t_jetidx   = reco_MC_Wdecay2_from_t_idx;
+        m_MC_Wdecay2_from_t_recodr   = reco_MC_Wdecay2_from_t_dr;
+        m_MC_Wdecay2_from_t_truthdr  = truth_MC_Wdecay2_from_t_dr;
+        if (m_MC_Wdecay2_from_t_jetidx>=0) {          
+          m_MA_Wdecay2_from_t_pt  = event.m_jets.at(reco_MC_Wdecay2_from_t_idx)->pt();
+          m_MA_Wdecay2_from_t_eta = event.m_jets.at(reco_MC_Wdecay2_from_t_idx)->eta();
+          m_MA_Wdecay2_from_t_phi = event.m_jets.at(reco_MC_Wdecay2_from_t_idx)->phi();
+          m_MA_Wdecay2_from_t_e   = event.m_jets.at(reco_MC_Wdecay2_from_t_idx)->e();
+        }
+	
+	// Wdecay1 from tbar
+        if (truth_MC_Wdecay1_from_tbar_idx >= 0) 
+	    RecoJetMatching(event, akt4truthjets->at(truth_MC_Wdecay1_from_tbar_idx), reco_MC_Wdecay1_from_tbar_dr, reco_MC_Wdecay1_from_tbar_idx);
+        
+        m_MC_Wdecay1_from_tbar_pt   = b_from_tbar.Perp();
+        m_MC_Wdecay1_from_tbar_eta  = b_from_tbar.Eta();
+        m_MC_Wdecay1_from_tbar_phi  = b_from_tbar.Phi();
+        m_MC_Wdecay1_from_tbar_e    = b_from_tbar.E();
+	m_MC_Wdecay1_from_tbar_pdgId    = topParton->MC_Wdecay1_from_tbar_pdgId();
+        m_MC_Wdecay1_from_tbar_jetidx   = reco_MC_Wdecay1_from_tbar_idx;
+        m_MC_Wdecay1_from_tbar_recodr   = reco_MC_Wdecay1_from_tbar_dr;
+        m_MC_Wdecay1_from_tbar_truthdr  = truth_MC_Wdecay1_from_tbar_dr;
+        if (m_MC_Wdecay1_from_tbar_jetidx>=0) {          
+          m_MA_Wdecay1_from_tbar_pt  = event.m_jets.at(reco_MC_Wdecay1_from_tbar_idx)->pt();
+          m_MA_Wdecay1_from_tbar_eta = event.m_jets.at(reco_MC_Wdecay1_from_tbar_idx)->eta();
+          m_MA_Wdecay1_from_tbar_phi = event.m_jets.at(reco_MC_Wdecay1_from_tbar_idx)->phi();
+          m_MA_Wdecay1_from_tbar_e   = event.m_jets.at(reco_MC_Wdecay1_from_tbar_idx)->e();
+        }
+	
+	// Wdecay2 from tbar
+        if (truth_MC_Wdecay2_from_tbar_idx >= 0) 
+	    RecoJetMatching(event, akt4truthjets->at(truth_MC_Wdecay2_from_tbar_idx), reco_MC_Wdecay2_from_tbar_dr, reco_MC_Wdecay2_from_tbar_idx);
+
+        m_MC_Wdecay2_from_tbar_pt   = b_from_tbar.Perp();
+        m_MC_Wdecay2_from_tbar_eta  = b_from_tbar.Eta();
+        m_MC_Wdecay2_from_tbar_phi  = b_from_tbar.Phi();
+        m_MC_Wdecay2_from_tbar_e    = b_from_tbar.E();
+	m_MC_Wdecay2_from_tbar_pdgId    = topParton->MC_Wdecay2_from_tbar_pdgId();
+        m_MC_Wdecay2_from_tbar_jetidx   = reco_MC_Wdecay2_from_tbar_idx;
+        m_MC_Wdecay2_from_tbar_recodr   = reco_MC_Wdecay2_from_tbar_dr;
+        m_MC_Wdecay2_from_tbar_truthdr  = truth_MC_Wdecay2_from_tbar_dr;
+        if (m_MC_Wdecay2_from_tbar_jetidx>=0) {          
+          m_MA_Wdecay2_from_tbar_pt  = event.m_jets.at(reco_MC_Wdecay2_from_tbar_idx)->pt();
+          m_MA_Wdecay2_from_tbar_eta = event.m_jets.at(reco_MC_Wdecay2_from_tbar_idx)->eta();
+          m_MA_Wdecay2_from_tbar_phi = event.m_jets.at(reco_MC_Wdecay2_from_tbar_idx)->phi();
+          m_MA_Wdecay2_from_tbar_e   = event.m_jets.at(reco_MC_Wdecay2_from_tbar_idx)->e();
+        }
+	
     }
 
     EventSaverFlatNtuple::saveEvent(event, xaodEvent);
+}
+
+void TtresEventSaverFlatNtuple::RecoJetMatching(const top::Event& event, const xAOD::Jet* trueJet, float & reco_dr, int & reco_idx) {
+ 	TLorentzVector akt4truthjets_p4 = trueJet->p4();
+	
+	
+	// match it to reco
+        int i = 0;
+        for (xAOD::JetContainer::const_iterator jet_itr = event.m_jets.begin(); jet_itr != event.m_jets.end(); ++jet_itr) {
+                const xAOD::Jet* jetPtr = *jet_itr;
+
+                // check the dr between this parton's truth jet and the reco jet
+		float dr = akt4truthjets_p4.DeltaR(jetPtr->p4());
+                if (dr < reco_dr) {
+                    reco_dr = dr;
+                    reco_idx = i;
+                }
+                i++;
+        }
 }
 
 }

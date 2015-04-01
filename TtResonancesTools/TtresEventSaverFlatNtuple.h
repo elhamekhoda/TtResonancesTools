@@ -2,6 +2,8 @@
 #define TTRESEVENTSAVERFLATNTUPLE_H
 
 #include "TopAnalysis/EventSaverFlatNtuple.h"
+#include "TLorentzVector.h"
+#include "TopEvent/Event.h"
 
 namespace top {
 
@@ -14,7 +16,9 @@ namespace top {
       void initialize(std::shared_ptr<top::TopConfig> config, TFile* file, const std::vector<std::string>& extraBranches, xAOD::TEvent& xaodEvent);
 
       void saveEvent(const top::Event& event, xAOD::TEvent& xaodEvent);
-
+      
+      void RecoJetMatching(const top::Event& event, const xAOD::Jet* trueJet, float & reco_dr, int & reco_idx); 
+            
     private:
 
       std::string m_ghostjetcollection;
@@ -74,13 +78,87 @@ namespace top {
       int   m_MC_b_from_t_jetidx;
       float m_MC_b_from_t_recodr;
       float m_MC_b_from_t_truthdr;
+      
+      float m_MC_b_from_tbar_pt;
+      float m_MC_b_from_tbar_eta;
+      float m_MC_b_from_tbar_phi;
+      float m_MC_b_from_tbar_e;
+      int   m_MC_b_from_tbar_match;
+      int   m_MC_b_from_tbar_jetidx;
+      float m_MC_b_from_tbar_recodr;
+      float m_MC_b_from_tbar_truthdr;
+      
+      float m_MC_Wdecay1_from_t_pt;
+      float m_MC_Wdecay1_from_t_eta;
+      float m_MC_Wdecay1_from_t_phi;
+      float m_MC_Wdecay1_from_t_e;
+      int   m_MC_Wdecay1_from_t_pdgId;
+      int   m_MC_Wdecay1_from_t_match;
+      int   m_MC_Wdecay1_from_t_jetidx;
+      float m_MC_Wdecay1_from_t_recodr;
+      float m_MC_Wdecay1_from_t_truthdr;
+      
+      float m_MC_Wdecay2_from_t_pt;
+      float m_MC_Wdecay2_from_t_eta;
+      float m_MC_Wdecay2_from_t_phi;
+      float m_MC_Wdecay2_from_t_e;
+      int   m_MC_Wdecay2_from_t_pdgId;
+      int   m_MC_Wdecay2_from_t_match;
+      int   m_MC_Wdecay2_from_t_jetidx;
+      float m_MC_Wdecay2_from_t_recodr;
+      float m_MC_Wdecay2_from_t_truthdr;
+      
+      float m_MC_Wdecay1_from_tbar_pt;
+      float m_MC_Wdecay1_from_tbar_eta;
+      float m_MC_Wdecay1_from_tbar_phi;
+      float m_MC_Wdecay1_from_tbar_e;
+      int   m_MC_Wdecay1_from_tbar_pdgId;
+      int   m_MC_Wdecay1_from_tbar_match;
+      int   m_MC_Wdecay1_from_tbar_jetidx;
+      float m_MC_Wdecay1_from_tbar_recodr;
+      float m_MC_Wdecay1_from_tbar_truthdr;
+      
+      float m_MC_Wdecay2_from_tbar_pt;
+      float m_MC_Wdecay2_from_tbar_eta;
+      float m_MC_Wdecay2_from_tbar_phi;
+      float m_MC_Wdecay2_from_tbar_e;
+      int   m_MC_Wdecay2_from_tbar_pdgId;
+      int   m_MC_Wdecay2_from_tbar_match;
+      int   m_MC_Wdecay2_from_tbar_jetidx;
+      float m_MC_Wdecay2_from_tbar_recodr;
+      float m_MC_Wdecay2_from_tbar_truthdr;
+           
+      // Matched jets
+      float m_MA_b_from_t_pt;
+      float m_MA_b_from_t_eta;
+      float m_MA_b_from_t_phi;
+      float m_MA_b_from_t_e;
+      
+      float m_MA_b_from_tbar_pt;
+      float m_MA_b_from_tbar_eta;
+      float m_MA_b_from_tbar_phi;
+      float m_MA_b_from_tbar_e;
+      
+      float m_MA_Wdecay1_from_t_pt;
+      float m_MA_Wdecay1_from_t_eta;
+      float m_MA_Wdecay1_from_t_phi;
+      float m_MA_Wdecay1_from_t_e;
 
-      float m_MC_b_from_t_jet_pt;
-      float m_MC_b_from_t_jet_eta;
-      float m_MC_b_from_t_jet_phi;
-      float m_MC_b_from_t_jet_e;
+      float m_MA_Wdecay2_from_t_pt;
+      float m_MA_Wdecay2_from_t_eta;
+      float m_MA_Wdecay2_from_t_phi;
+      float m_MA_Wdecay2_from_t_e;
+            
+      float m_MA_Wdecay1_from_tbar_pt;
+      float m_MA_Wdecay1_from_tbar_eta;
+      float m_MA_Wdecay1_from_tbar_phi;
+      float m_MA_Wdecay1_from_tbar_e;
 
-
+      float m_MA_Wdecay2_from_tbar_pt;
+      float m_MA_Wdecay2_from_tbar_eta;
+      float m_MA_Wdecay2_from_tbar_phi;
+      float m_MA_Wdecay2_from_tbar_e;
+           
       ClassDef(TtresEventSaverFlatNtuple, 0);
   };
 
