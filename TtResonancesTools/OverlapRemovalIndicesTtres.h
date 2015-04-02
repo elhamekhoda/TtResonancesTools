@@ -14,6 +14,11 @@
   **/ 
 
 #include "TopObjectSelectionTools/OverlapRemovalBase.h"
+#include "xAODEgamma/ElectronContainer.h"
+#include "xAODEgamma/PhotonContainer.h"
+#include "xAODTau/TauJetContainer.h"
+#include "xAODJet/JetContainer.h"
+#include "xAODMuon/MuonContainer.h"
 
 namespace top {
 
