@@ -63,18 +63,18 @@ namespace top {
       std::vector<float> m_akt4truthjet_pt;
       std::vector<float> m_akt4truthjet_eta;
       std::vector<float> m_akt4truthjet_phi;
-      std::vector<float> m_akt4truthjet_e;
+      std::vector<float> m_akt4truthjet_m;
 
       std::vector<float> m_akt10truthjet_pt;
       std::vector<float> m_akt10truthjet_eta;
       std::vector<float> m_akt10truthjet_phi;
-      std::vector<float> m_akt10truthjet_e;
+      std::vector<float> m_akt10truthjet_m;
 
+      // Partons 
       float m_MC_b_from_t_pt;
       float m_MC_b_from_t_eta;
       float m_MC_b_from_t_phi;
-      float m_MC_b_from_t_e;
-      int   m_MC_b_from_t_match;
+      float m_MC_b_from_t_m;
       int   m_MC_b_from_t_jetidx;
       float m_MC_b_from_t_recodr;
       float m_MC_b_from_t_truthdr;
@@ -82,8 +82,7 @@ namespace top {
       float m_MC_b_from_tbar_pt;
       float m_MC_b_from_tbar_eta;
       float m_MC_b_from_tbar_phi;
-      float m_MC_b_from_tbar_e;
-      int   m_MC_b_from_tbar_match;
+      float m_MC_b_from_tbar_m;
       int   m_MC_b_from_tbar_jetidx;
       float m_MC_b_from_tbar_recodr;
       float m_MC_b_from_tbar_truthdr;
@@ -91,9 +90,8 @@ namespace top {
       float m_MC_Wdecay1_from_t_pt;
       float m_MC_Wdecay1_from_t_eta;
       float m_MC_Wdecay1_from_t_phi;
-      float m_MC_Wdecay1_from_t_e;
+      float m_MC_Wdecay1_from_t_m;
       int   m_MC_Wdecay1_from_t_pdgId;
-      int   m_MC_Wdecay1_from_t_match;
       int   m_MC_Wdecay1_from_t_jetidx;
       float m_MC_Wdecay1_from_t_recodr;
       float m_MC_Wdecay1_from_t_truthdr;
@@ -101,9 +99,8 @@ namespace top {
       float m_MC_Wdecay2_from_t_pt;
       float m_MC_Wdecay2_from_t_eta;
       float m_MC_Wdecay2_from_t_phi;
-      float m_MC_Wdecay2_from_t_e;
+      float m_MC_Wdecay2_from_t_m;
       int   m_MC_Wdecay2_from_t_pdgId;
-      int   m_MC_Wdecay2_from_t_match;
       int   m_MC_Wdecay2_from_t_jetidx;
       float m_MC_Wdecay2_from_t_recodr;
       float m_MC_Wdecay2_from_t_truthdr;
@@ -111,9 +108,8 @@ namespace top {
       float m_MC_Wdecay1_from_tbar_pt;
       float m_MC_Wdecay1_from_tbar_eta;
       float m_MC_Wdecay1_from_tbar_phi;
-      float m_MC_Wdecay1_from_tbar_e;
+      float m_MC_Wdecay1_from_tbar_m;
       int   m_MC_Wdecay1_from_tbar_pdgId;
-      int   m_MC_Wdecay1_from_tbar_match;
       int   m_MC_Wdecay1_from_tbar_jetidx;
       float m_MC_Wdecay1_from_tbar_recodr;
       float m_MC_Wdecay1_from_tbar_truthdr;
@@ -121,9 +117,8 @@ namespace top {
       float m_MC_Wdecay2_from_tbar_pt;
       float m_MC_Wdecay2_from_tbar_eta;
       float m_MC_Wdecay2_from_tbar_phi;
-      float m_MC_Wdecay2_from_tbar_e;
+      float m_MC_Wdecay2_from_tbar_m;
       int   m_MC_Wdecay2_from_tbar_pdgId;
-      int   m_MC_Wdecay2_from_tbar_match;
       int   m_MC_Wdecay2_from_tbar_jetidx;
       float m_MC_Wdecay2_from_tbar_recodr;
       float m_MC_Wdecay2_from_tbar_truthdr;
@@ -132,32 +127,58 @@ namespace top {
       float m_MA_b_from_t_pt;
       float m_MA_b_from_t_eta;
       float m_MA_b_from_t_phi;
-      float m_MA_b_from_t_e;
+      float m_MA_b_from_t_m;
       
       float m_MA_b_from_tbar_pt;
       float m_MA_b_from_tbar_eta;
       float m_MA_b_from_tbar_phi;
-      float m_MA_b_from_tbar_e;
+      float m_MA_b_from_tbar_m;
       
       float m_MA_Wdecay1_from_t_pt;
       float m_MA_Wdecay1_from_t_eta;
       float m_MA_Wdecay1_from_t_phi;
-      float m_MA_Wdecay1_from_t_e;
+      float m_MA_Wdecay1_from_t_m;
 
       float m_MA_Wdecay2_from_t_pt;
       float m_MA_Wdecay2_from_t_eta;
       float m_MA_Wdecay2_from_t_phi;
-      float m_MA_Wdecay2_from_t_e;
+      float m_MA_Wdecay2_from_t_m;
             
       float m_MA_Wdecay1_from_tbar_pt;
       float m_MA_Wdecay1_from_tbar_eta;
       float m_MA_Wdecay1_from_tbar_phi;
-      float m_MA_Wdecay1_from_tbar_e;
+      float m_MA_Wdecay1_from_tbar_m;
 
       float m_MA_Wdecay2_from_tbar_pt;
       float m_MA_Wdecay2_from_tbar_eta;
       float m_MA_Wdecay2_from_tbar_phi;
-      float m_MA_Wdecay2_from_tbar_e;
+      float m_MA_Wdecay2_from_tbar_m;
+      
+      // Reconstructed particles from the matched jets
+      float m_MA_W_from_t_pt;
+      float m_MA_W_from_t_eta;
+      float m_MA_W_from_t_phi;
+      float m_MA_W_from_t_m;
+      
+      float m_MA_W_from_tbar_pt;
+      float m_MA_W_from_tbar_eta;
+      float m_MA_W_from_tbar_phi;
+      float m_MA_W_from_tbar_m;
+            
+      float m_MA_t_pt;
+      float m_MA_t_eta;
+      float m_MA_t_phi;
+      float m_MA_t_m;
+      
+      float m_MA_tbar_pt;
+      float m_MA_tbar_eta;
+      float m_MA_tbar_phi;
+      float m_MA_tbar_m;
+      
+      float m_MA_ttbar_pt;
+      float m_MA_ttbar_eta;
+      float m_MA_ttbar_phi;
+      float m_MA_ttbar_m;  
            
       ClassDef(TtresEventSaverFlatNtuple, 0);
   };

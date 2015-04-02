@@ -84,21 +84,21 @@ void TtresEventSaverFlatNtuple::initialize(std::shared_ptr<top::TopConfig> confi
             systematicTree->makeOutputVariable(m_akt4truthjet_pt,  "akt4truthjet_pt");
             systematicTree->makeOutputVariable(m_akt4truthjet_eta, "akt4truthjet_eta");
             systematicTree->makeOutputVariable(m_akt4truthjet_phi, "akt4truthjet_phi");
-            systematicTree->makeOutputVariable(m_akt4truthjet_e,   "akt4truthjet_e");
+            systematicTree->makeOutputVariable(m_akt4truthjet_m,   "akt4truthjet_m");
 
             systematicTree->makeOutputVariable(m_akt10truthjet_pt,  "akt10truthjet_pt");
             systematicTree->makeOutputVariable(m_akt10truthjet_eta, "akt10truthjet_eta");
             systematicTree->makeOutputVariable(m_akt10truthjet_phi, "akt10truthjet_phi");
-            systematicTree->makeOutputVariable(m_akt10truthjet_e,   "akt10truthjet_e");
+            systematicTree->makeOutputVariable(m_akt10truthjet_m,   "akt10truthjet_m");
         }
 
         if (m_savePartons) {
 	
-	    // Partons
+	    //Partons
             systematicTree->makeOutputVariable(m_MC_b_from_t_pt,      "MC_b_from_t_pt");
             systematicTree->makeOutputVariable(m_MC_b_from_t_eta,     "MC_b_from_t_eta");
             systematicTree->makeOutputVariable(m_MC_b_from_t_phi,     "MC_b_from_t_phi");
-            systematicTree->makeOutputVariable(m_MC_b_from_t_e,       "MC_b_from_t_e");
+            systematicTree->makeOutputVariable(m_MC_b_from_t_m,       "MC_b_from_t_m");
             systematicTree->makeOutputVariable(m_MC_b_from_t_jetidx,  "MC_b_from_t_jetidx");
             systematicTree->makeOutputVariable(m_MC_b_from_t_recodr,  "MC_b_from_t_recodr");
             systematicTree->makeOutputVariable(m_MC_b_from_t_truthdr, "MC_b_from_t_truthdr");
@@ -106,7 +106,7 @@ void TtresEventSaverFlatNtuple::initialize(std::shared_ptr<top::TopConfig> confi
             systematicTree->makeOutputVariable(m_MC_b_from_tbar_pt,      "MC_b_from_tbar_pt");
             systematicTree->makeOutputVariable(m_MC_b_from_tbar_eta,     "MC_b_from_tbar_eta");
             systematicTree->makeOutputVariable(m_MC_b_from_tbar_phi,     "MC_b_from_tbar_phi");
-            systematicTree->makeOutputVariable(m_MC_b_from_tbar_e,       "MC_b_from_tbar_e");
+            systematicTree->makeOutputVariable(m_MC_b_from_tbar_m,       "MC_b_from_tbar_m");
             systematicTree->makeOutputVariable(m_MC_b_from_tbar_jetidx,  "MC_b_from_tbar_jetidx");
             systematicTree->makeOutputVariable(m_MC_b_from_tbar_recodr,  "MC_b_from_tbar_recodr");
             systematicTree->makeOutputVariable(m_MC_b_from_tbar_truthdr, "MC_b_from_tbar_truthdr");
@@ -114,7 +114,7 @@ void TtresEventSaverFlatNtuple::initialize(std::shared_ptr<top::TopConfig> confi
             systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_pt,      "MC_Wdecay1_from_t_pt");
             systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_eta,     "MC_Wdecay1_from_t_eta");
             systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_phi,     "MC_Wdecay1_from_t_phi");
-            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_e,       "MC_Wdecay1_from_t_e");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_m,       "MC_Wdecay1_from_t_m");
 	    systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_pdgId,   "MC_Wdecay1_from_t_pdgId");
             systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_jetidx,  "MC_Wdecay1_from_t_jetidx");
             systematicTree->makeOutputVariable(m_MC_Wdecay1_from_t_recodr,  "MC_Wdecay1_from_t_recodr");
@@ -123,7 +123,7 @@ void TtresEventSaverFlatNtuple::initialize(std::shared_ptr<top::TopConfig> confi
 	    systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_pt,      "MC_Wdecay2_from_t_pt");
             systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_eta,     "MC_Wdecay2_from_t_eta");
             systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_phi,     "MC_Wdecay2_from_t_phi");
-            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_e,       "MC_Wdecay2_from_t_e");
+            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_m,       "MC_Wdecay2_from_t_m");
 	    systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_pdgId,   "MC_Wdecay2_from_t_pdgId");
             systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_jetidx,  "MC_Wdecay2_from_t_jetidx");
             systematicTree->makeOutputVariable(m_MC_Wdecay2_from_t_recodr,  "MC_Wdecay2_from_t_recodr");
@@ -132,7 +132,7 @@ void TtresEventSaverFlatNtuple::initialize(std::shared_ptr<top::TopConfig> confi
             systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_pt,      "MC_Wdecay1_from_tbar_pt");
             systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_eta,     "MC_Wdecay1_from_tbar_eta");
             systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_phi,     "MC_Wdecay1_from_tbar_phi");
-            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_e,       "MC_Wdecay1_from_tbar_e");
+            systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_m,       "MC_Wdecay1_from_tbar_m");
 	    systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_pdgId,   "MC_Wdecay1_from_tbar_pdgId");
             systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_jetidx,  "MC_Wdecay1_from_tbar_jetidx");
             systematicTree->makeOutputVariable(m_MC_Wdecay1_from_tbar_recodr,  "MC_Wdecay1_from_tbar_recodr");
@@ -141,7 +141,7 @@ void TtresEventSaverFlatNtuple::initialize(std::shared_ptr<top::TopConfig> confi
 	    systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_pt,      "MC_Wdecay2_from_tbar_pt");
             systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_eta,     "MC_Wdecay2_from_tbar_eta");
             systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_phi,     "MC_Wdecay2_from_tbar_phi");
-            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_e,       "MC_Wdecay2_from_tbar_e");
+            systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_m,       "MC_Wdecay2_from_tbar_m");
 	    systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_pdgId,   "MC_Wdecay2_from_tbar_pdgId");
             systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_jetidx,  "MC_Wdecay2_from_tbar_jetidx");
             systematicTree->makeOutputVariable(m_MC_Wdecay2_from_tbar_recodr,  "MC_Wdecay2_from_tbar_recodr");
@@ -151,32 +151,58 @@ void TtresEventSaverFlatNtuple::initialize(std::shared_ptr<top::TopConfig> confi
             systematicTree->makeOutputVariable(m_MA_b_from_t_pt,  "MA_b_from_t_pt");
             systematicTree->makeOutputVariable(m_MA_b_from_t_eta, "MA_b_from_t_eta");
             systematicTree->makeOutputVariable(m_MA_b_from_t_phi, "MA_b_from_t_phi");
-            systematicTree->makeOutputVariable(m_MA_b_from_t_e,   "MA_b_from_t_e");
+            systematicTree->makeOutputVariable(m_MA_b_from_t_m,   "MA_b_from_t_m");
 	    
 	    systematicTree->makeOutputVariable(m_MA_b_from_tbar_pt,  "MA_b_from_tbar_pt");
             systematicTree->makeOutputVariable(m_MA_b_from_tbar_eta, "MA_b_from_tbar_eta");
             systematicTree->makeOutputVariable(m_MA_b_from_tbar_phi, "MA_b_from_tbar_phi");
-            systematicTree->makeOutputVariable(m_MA_b_from_tbar_e,   "MA_b_from_tbar_e");
+            systematicTree->makeOutputVariable(m_MA_b_from_tbar_m,   "MA_b_from_tbar_m");
 	    
 	    systematicTree->makeOutputVariable(m_MA_Wdecay1_from_t_pt,  "MA_Wdecay1_from_t_pt");
             systematicTree->makeOutputVariable(m_MA_Wdecay1_from_t_eta, "MA_Wdecay1_from_t_eta");
             systematicTree->makeOutputVariable(m_MA_Wdecay1_from_t_phi, "MA_Wdecay1_from_t_phi");
-            systematicTree->makeOutputVariable(m_MA_Wdecay1_from_t_e,   "MA_Wdecay1_from_t_e");
+            systematicTree->makeOutputVariable(m_MA_Wdecay1_from_t_m,   "MA_Wdecay1_from_t_m");
 	    
 	    systematicTree->makeOutputVariable(m_MA_Wdecay2_from_t_pt,  "MA_Wdecay2_from_t_pt");
             systematicTree->makeOutputVariable(m_MA_Wdecay2_from_t_eta, "MA_Wdecay2_from_t_eta");
             systematicTree->makeOutputVariable(m_MA_Wdecay2_from_t_phi, "MA_Wdecay2_from_t_phi");
-            systematicTree->makeOutputVariable(m_MA_Wdecay2_from_t_e,   "MA_Wdecay2_from_t_e");
+            systematicTree->makeOutputVariable(m_MA_Wdecay2_from_t_m,   "MA_Wdecay2_from_t_m");
 	    
 	    systematicTree->makeOutputVariable(m_MA_Wdecay1_from_tbar_pt,  "MA_Wdecay1_from_tbar_pt");
             systematicTree->makeOutputVariable(m_MA_Wdecay1_from_tbar_eta, "MA_Wdecay1_from_tbar_eta");
             systematicTree->makeOutputVariable(m_MA_Wdecay1_from_tbar_phi, "MA_Wdecay1_from_tbar_phi");
-            systematicTree->makeOutputVariable(m_MA_Wdecay1_from_tbar_e,   "MA_Wdecay1_from_tbar_e");
+            systematicTree->makeOutputVariable(m_MA_Wdecay1_from_tbar_m,   "MA_Wdecay1_from_tbar_m");
 	    
 	    systematicTree->makeOutputVariable(m_MA_Wdecay2_from_tbar_pt,  "MA_Wdecay2_from_tbar_pt");
             systematicTree->makeOutputVariable(m_MA_Wdecay2_from_tbar_eta, "MA_Wdecay2_from_tbar_eta");
             systematicTree->makeOutputVariable(m_MA_Wdecay2_from_tbar_phi, "MA_Wdecay2_from_tbar_phi");
-            systematicTree->makeOutputVariable(m_MA_Wdecay2_from_tbar_e,   "MA_Wdecay2_from_tbar_e");	    
+            systematicTree->makeOutputVariable(m_MA_Wdecay2_from_tbar_m,   "MA_Wdecay2_from_tbar_m");	    
+	    
+	    // Reconstructed particles from the matched jets
+	    systematicTree->makeOutputVariable(m_MA_W_from_t_pt,  "MA_W_from_t_pt");
+	    systematicTree->makeOutputVariable(m_MA_W_from_t_eta, "MA_W_from_t_eta");
+	    systematicTree->makeOutputVariable(m_MA_W_from_t_phi, "MA_W_from_t_phi");
+            systematicTree->makeOutputVariable(m_MA_W_from_t_m,   "MA_W_from_t_m");
+
+	    systematicTree->makeOutputVariable(m_MA_W_from_tbar_pt,  "MA_W_from_tbar_pt");
+	    systematicTree->makeOutputVariable(m_MA_W_from_tbar_eta, "MA_W_from_tbar_eta");
+	    systematicTree->makeOutputVariable(m_MA_W_from_tbar_phi, "MA_W_from_tbar_phi");
+	    systematicTree->makeOutputVariable(m_MA_W_from_tbar_m,   "MA_W_from_tbar_m");
+	    
+	    systematicTree->makeOutputVariable(m_MA_t_pt,  "MA_t_pt");
+	    systematicTree->makeOutputVariable(m_MA_t_eta, "MA_t_eta");
+	    systematicTree->makeOutputVariable(m_MA_t_phi, "MA_t_phi");
+            systematicTree->makeOutputVariable(m_MA_t_m,   "MA_t_m");
+
+	    systematicTree->makeOutputVariable(m_MA_tbar_pt,  "MA_tbar_pt");
+	    systematicTree->makeOutputVariable(m_MA_tbar_eta, "MA_tbar_eta");
+	    systematicTree->makeOutputVariable(m_MA_tbar_phi, "MA_tbar_phi");
+	    systematicTree->makeOutputVariable(m_MA_tbar_m,   "MA_tbar_m");	      
+	    
+	    systematicTree->makeOutputVariable(m_MA_ttbar_pt,  "MA_ttbar_pt");
+	    systematicTree->makeOutputVariable(m_MA_ttbar_eta, "MA_ttbar_eta");
+	    systematicTree->makeOutputVariable(m_MA_ttbar_phi, "MA_ttbar_phi");
+	    systematicTree->makeOutputVariable(m_MA_ttbar_m,   "MA_ttbar_m");    
 	    
         }
 
@@ -332,7 +358,7 @@ void TtresEventSaverFlatNtuple::saveEvent(const top::Event& event, xAOD::TEvent&
             m_akt4truthjet_pt.resize(akt4truthjets->size());
             m_akt4truthjet_eta.resize(akt4truthjets->size());
             m_akt4truthjet_phi.resize(akt4truthjets->size());
-            m_akt4truthjet_e.resize(akt4truthjets->size());
+            m_akt4truthjet_m.resize(akt4truthjets->size());
 
             i = 0;
             for (xAOD::JetContainer::const_iterator jet_itr = akt4truthjets->begin(); jet_itr != akt4truthjets->end(); ++jet_itr) {
@@ -341,7 +367,7 @@ void TtresEventSaverFlatNtuple::saveEvent(const top::Event& event, xAOD::TEvent&
                 m_akt4truthjet_pt[i] = akt4truthjetPtr->pt();
                 m_akt4truthjet_eta[i] = akt4truthjetPtr->eta();
                 m_akt4truthjet_phi[i] = akt4truthjetPtr->phi();
-                m_akt4truthjet_e[i] = akt4truthjetPtr->e();
+                m_akt4truthjet_m[i] = akt4truthjetPtr->m();
                 ++i;
             }
         }
@@ -354,7 +380,7 @@ void TtresEventSaverFlatNtuple::saveEvent(const top::Event& event, xAOD::TEvent&
             m_akt10truthjet_pt.resize(akt10truthjets->size());
             m_akt10truthjet_eta.resize(akt10truthjets->size());
             m_akt10truthjet_phi.resize(akt10truthjets->size());
-            m_akt10truthjet_e.resize(akt10truthjets->size());
+            m_akt10truthjet_m.resize(akt10truthjets->size());
             // setup extra branches here
 
             i = 0;
@@ -364,17 +390,18 @@ void TtresEventSaverFlatNtuple::saveEvent(const top::Event& event, xAOD::TEvent&
                 m_akt10truthjet_pt[i] = akt10truthjetPtr->pt();
                 m_akt10truthjet_eta[i] = akt10truthjetPtr->eta();
                 m_akt10truthjet_phi[i] = akt10truthjetPtr->phi();
-                m_akt10truthjet_e[i] = akt10truthjetPtr->e();
+                m_akt10truthjet_m[i] = akt10truthjetPtr->m();
                 // do dr matching here
                 ++i;
             }
         }
     }
 
+    // Default values 
     m_MC_b_from_t_pt       = -5000;
     m_MC_b_from_t_eta      = -5000;
     m_MC_b_from_t_phi      = -5000;
-    m_MC_b_from_t_e        = -5000;
+    m_MC_b_from_t_m        = -5000;
     m_MC_b_from_t_jetidx   = -1;
     m_MC_b_from_t_recodr   = -1;
     m_MC_b_from_t_truthdr  = -1;
@@ -382,7 +409,7 @@ void TtresEventSaverFlatNtuple::saveEvent(const top::Event& event, xAOD::TEvent&
     m_MC_b_from_tbar_pt	     = -5000;
     m_MC_b_from_tbar_eta     = -5000;
     m_MC_b_from_tbar_phi     = -5000;
-    m_MC_b_from_tbar_e	     = -5000;
+    m_MC_b_from_tbar_m	     = -5000;
     m_MC_b_from_tbar_jetidx  = -1;
     m_MC_b_from_tbar_recodr  = -1;
     m_MC_b_from_tbar_truthdr = -1;    
@@ -390,7 +417,7 @@ void TtresEventSaverFlatNtuple::saveEvent(const top::Event& event, xAOD::TEvent&
     m_MC_Wdecay1_from_t_pt       = -5000;
     m_MC_Wdecay1_from_t_eta      = -5000;
     m_MC_Wdecay1_from_t_phi      = -5000;
-    m_MC_Wdecay1_from_t_e        = -5000;
+    m_MC_Wdecay1_from_t_m        = -5000;
     m_MC_Wdecay1_from_t_pdgId    = 0;
     m_MC_Wdecay1_from_t_jetidx   = -1;
     m_MC_Wdecay1_from_t_recodr   = -1;
@@ -399,7 +426,7 @@ void TtresEventSaverFlatNtuple::saveEvent(const top::Event& event, xAOD::TEvent&
     m_MC_Wdecay2_from_t_pt       = -5000;
     m_MC_Wdecay2_from_t_eta      = -5000;
     m_MC_Wdecay2_from_t_phi      = -5000;
-    m_MC_Wdecay2_from_t_e        = -5000;
+    m_MC_Wdecay2_from_t_m        = -5000;
     m_MC_Wdecay2_from_t_pdgId    = 0;
     m_MC_Wdecay2_from_t_jetidx   = -1;
     m_MC_Wdecay2_from_t_recodr   = -1;
@@ -408,7 +435,7 @@ void TtresEventSaverFlatNtuple::saveEvent(const top::Event& event, xAOD::TEvent&
     m_MC_Wdecay1_from_tbar_pt	   = -5000;
     m_MC_Wdecay1_from_tbar_eta	   = -5000;
     m_MC_Wdecay1_from_tbar_phi	   = -5000;
-    m_MC_Wdecay1_from_tbar_e	   = -5000;
+    m_MC_Wdecay1_from_tbar_m	   = -5000;
     m_MC_Wdecay1_from_tbar_pdgId   = 0;
     m_MC_Wdecay1_from_tbar_jetidx  = -1;
     m_MC_Wdecay1_from_tbar_recodr  = -1;
@@ -417,42 +444,66 @@ void TtresEventSaverFlatNtuple::saveEvent(const top::Event& event, xAOD::TEvent&
     m_MC_Wdecay2_from_tbar_pt	   = -5000;
     m_MC_Wdecay2_from_tbar_eta	   = -5000;
     m_MC_Wdecay2_from_tbar_phi	   = -5000;
-    m_MC_Wdecay2_from_tbar_e	   = -5000;
+    m_MC_Wdecay2_from_tbar_m	   = -5000;
     m_MC_Wdecay2_from_tbar_pdgId   = 0;
     m_MC_Wdecay2_from_tbar_jetidx  = -1;
     m_MC_Wdecay2_from_tbar_recodr  = -1;
     m_MC_Wdecay2_from_tbar_truthdr = -1;    
     
-    // Matched jets
     m_MA_b_from_t_pt = -5000;
     m_MA_b_from_t_eta= -5000;
     m_MA_b_from_t_phi= -5000;
-    m_MA_b_from_t_e  = -5000;
+    m_MA_b_from_t_m  = -5000;
     
     m_MA_b_from_tbar_pt  = -5000;
     m_MA_b_from_tbar_eta = -5000;
     m_MA_b_from_tbar_phi = -5000;
-    m_MA_b_from_tbar_e   = -5000;
+    m_MA_b_from_tbar_m   = -5000;
     
-    m_MA_Wdecay1_from_t_pt	 = -5000;
+    m_MA_Wdecay1_from_t_pt   = -5000;
     m_MA_Wdecay1_from_t_eta  = -5000;
     m_MA_Wdecay1_from_t_phi  = -5000;
-    m_MA_Wdecay1_from_t_e	 = -5000;
+    m_MA_Wdecay1_from_t_m    = -5000;
 
-    m_MA_Wdecay2_from_t_pt	= -5000;
+    m_MA_Wdecay2_from_t_pt  = -5000;
     m_MA_Wdecay2_from_t_eta = -5000;
     m_MA_Wdecay2_from_t_phi = -5000;
-    m_MA_Wdecay2_from_t_e	= -5000;
+    m_MA_Wdecay2_from_t_m   = -5000;
 
     m_MA_Wdecay1_from_tbar_pt  = -5000;
     m_MA_Wdecay1_from_tbar_eta = -5000;
     m_MA_Wdecay1_from_tbar_phi = -5000;
-    m_MA_Wdecay1_from_tbar_e   = -5000;
+    m_MA_Wdecay1_from_tbar_m   = -5000;
 
     m_MA_Wdecay2_from_tbar_pt   = -5000;
     m_MA_Wdecay2_from_tbar_eta  = -5000;
     m_MA_Wdecay2_from_tbar_phi  = -5000;
-    m_MA_Wdecay2_from_tbar_e    = -5000; 
+    m_MA_Wdecay2_from_tbar_m    = -5000; 
+    
+    m_MA_W_from_t_pt  = -5000;
+    m_MA_W_from_t_eta = -5000;
+    m_MA_W_from_t_phi = -5000;
+    m_MA_W_from_t_m   = -5000;
+
+    m_MA_W_from_tbar_pt  = -5000;
+    m_MA_W_from_tbar_eta = -5000;
+    m_MA_W_from_tbar_phi = -5000;
+    m_MA_W_from_tbar_m   = -5000;    
+    
+    m_MA_t_pt  = -5000;
+    m_MA_t_eta = -5000;
+    m_MA_t_phi = -5000;
+    m_MA_t_m   = -5000;
+
+    m_MA_tbar_pt  = -5000;
+    m_MA_tbar_eta = -5000;
+    m_MA_tbar_phi = -5000;
+    m_MA_tbar_m   = -5000;	
+    
+    m_MA_ttbar_pt  = -5000;
+    m_MA_ttbar_eta = -5000;
+    m_MA_ttbar_phi = -5000;
+    m_MA_ttbar_m   = -5000;	    
     
     if (m_savePartons) {
         const xAOD::JetContainer* akt4truthjets = nullptr;
@@ -584,54 +635,59 @@ void TtresEventSaverFlatNtuple::saveEvent(const top::Event& event, xAOD::TEvent&
 	      
             ++i;
         }
-        // in each case, try to match it to reco
+
+        // Now, the truth jets are matched to the reco jets
 	
 	// b from t
         if (truth_MC_b_from_t_idx >= 0) 
 	    RecoJetMatching(event, akt4truthjets->at(truth_MC_b_from_t_idx), reco_MC_b_from_t_dr, reco_MC_b_from_t_idx);
         
-        m_MC_b_from_t_pt   = b_from_t.Perp();
+        m_MC_b_from_t_pt   = b_from_t.Pt();
         m_MC_b_from_t_eta  = b_from_t.Eta();
         m_MC_b_from_t_phi  = b_from_t.Phi();
-        m_MC_b_from_t_e    = b_from_t.E();
+        m_MC_b_from_t_m    = b_from_t.M();
+	
         m_MC_b_from_t_jetidx   = reco_MC_b_from_t_idx;
         m_MC_b_from_t_recodr   = reco_MC_b_from_t_dr;
         m_MC_b_from_t_truthdr  = truth_MC_b_from_t_dr;
+	
         if (m_MC_b_from_t_jetidx>=0) {
           m_MA_b_from_t_pt  = event.m_jets.at(reco_MC_b_from_t_idx)->pt();
           m_MA_b_from_t_eta = event.m_jets.at(reco_MC_b_from_t_idx)->eta();
           m_MA_b_from_t_phi = event.m_jets.at(reco_MC_b_from_t_idx)->phi();
-          m_MA_b_from_t_e   = event.m_jets.at(reco_MC_b_from_t_idx)->e();
+          m_MA_b_from_t_m   = event.m_jets.at(reco_MC_b_from_t_idx)->m();
         }
 	
 	// b from tbar	
 	if (truth_MC_b_from_tbar_idx >= 0) 
 	    RecoJetMatching(event, akt4truthjets->at(truth_MC_b_from_tbar_idx), reco_MC_b_from_tbar_dr, reco_MC_b_from_tbar_idx);
         
-        m_MC_b_from_tbar_pt   = b_from_tbar.Perp();
+        m_MC_b_from_tbar_pt   = b_from_tbar.Pt();
         m_MC_b_from_tbar_eta  = b_from_tbar.Eta();
         m_MC_b_from_tbar_phi  = b_from_tbar.Phi();
-        m_MC_b_from_tbar_e    = b_from_tbar.E();
+        m_MC_b_from_tbar_m    = b_from_tbar.M();
+	
         m_MC_b_from_tbar_jetidx  = reco_MC_b_from_tbar_idx;
-
 	m_MC_b_from_tbar_recodr  = reco_MC_b_from_tbar_dr;
         m_MC_b_from_tbar_truthdr = truth_MC_b_from_tbar_dr;
+	
         if (m_MC_b_from_tbar_jetidx>=0) {         
           m_MA_b_from_tbar_pt  = event.m_jets.at(reco_MC_b_from_tbar_idx)->pt();
           m_MA_b_from_tbar_eta = event.m_jets.at(reco_MC_b_from_tbar_idx)->eta();
           m_MA_b_from_tbar_phi = event.m_jets.at(reco_MC_b_from_tbar_idx)->phi();
-          m_MA_b_from_tbar_e   = event.m_jets.at(reco_MC_b_from_tbar_idx)->e();
+          m_MA_b_from_tbar_m   = event.m_jets.at(reco_MC_b_from_tbar_idx)->m();
         }
 	
 	// Wdecay1 from t
         if (truth_MC_Wdecay1_from_t_idx >= 0) 
 	    RecoJetMatching(event, akt4truthjets->at(truth_MC_Wdecay1_from_t_idx), reco_MC_Wdecay1_from_t_dr, reco_MC_Wdecay1_from_t_idx);
         
-        m_MC_Wdecay1_from_t_pt   = b_from_t.Perp();
-        m_MC_Wdecay1_from_t_eta  = b_from_t.Eta();
-        m_MC_Wdecay1_from_t_phi  = b_from_t.Phi();
-        m_MC_Wdecay1_from_t_e    = b_from_t.E();
+        m_MC_Wdecay1_from_t_pt   = Wdecay1_from_t.Pt();
+        m_MC_Wdecay1_from_t_eta  = Wdecay1_from_t.Eta();
+        m_MC_Wdecay1_from_t_phi  = Wdecay1_from_t.Phi();
+        m_MC_Wdecay1_from_t_m    = Wdecay1_from_t.M();
 	m_MC_Wdecay1_from_t_pdgId   = topParton->MC_Wdecay1_from_t_pdgId();
+	
         m_MC_Wdecay1_from_t_jetidx  = reco_MC_Wdecay1_from_t_idx;
         m_MC_Wdecay1_from_t_recodr  = reco_MC_Wdecay1_from_t_dr;
         m_MC_Wdecay1_from_t_truthdr = truth_MC_Wdecay1_from_t_dr;
@@ -640,67 +696,149 @@ void TtresEventSaverFlatNtuple::saveEvent(const top::Event& event, xAOD::TEvent&
           m_MA_Wdecay1_from_t_pt  = event.m_jets.at(reco_MC_Wdecay1_from_t_idx)->pt();
           m_MA_Wdecay1_from_t_eta = event.m_jets.at(reco_MC_Wdecay1_from_t_idx)->eta();
           m_MA_Wdecay1_from_t_phi = event.m_jets.at(reco_MC_Wdecay1_from_t_idx)->phi();
-          m_MA_Wdecay1_from_t_e   = event.m_jets.at(reco_MC_Wdecay1_from_t_idx)->e();
+          m_MA_Wdecay1_from_t_m   = event.m_jets.at(reco_MC_Wdecay1_from_t_idx)->m();
         }
 	
 	// Wdecay2 from t
         if (truth_MC_Wdecay2_from_t_idx >= 0) 
 	    RecoJetMatching(event, akt4truthjets->at(truth_MC_Wdecay2_from_t_idx), reco_MC_Wdecay2_from_t_dr, reco_MC_Wdecay2_from_t_idx);
 	    
-        m_MC_Wdecay2_from_t_pt   = b_from_t.Perp();
-        m_MC_Wdecay2_from_t_eta  = b_from_t.Eta();
-        m_MC_Wdecay2_from_t_phi  = b_from_t.Phi();
-        m_MC_Wdecay2_from_t_e    = b_from_t.E();
+        m_MC_Wdecay2_from_t_pt   = Wdecay2_from_t.Pt();
+        m_MC_Wdecay2_from_t_eta  = Wdecay2_from_t.Eta();
+        m_MC_Wdecay2_from_t_phi  = Wdecay2_from_t.Phi();
+        m_MC_Wdecay2_from_t_m    = Wdecay2_from_t.M();
 	m_MC_Wdecay2_from_t_pdgId    = topParton->MC_Wdecay2_from_t_pdgId();
+	
         m_MC_Wdecay2_from_t_jetidx   = reco_MC_Wdecay2_from_t_idx;
         m_MC_Wdecay2_from_t_recodr   = reco_MC_Wdecay2_from_t_dr;
         m_MC_Wdecay2_from_t_truthdr  = truth_MC_Wdecay2_from_t_dr;
+	
         if (m_MC_Wdecay2_from_t_jetidx>=0) {          
           m_MA_Wdecay2_from_t_pt  = event.m_jets.at(reco_MC_Wdecay2_from_t_idx)->pt();
           m_MA_Wdecay2_from_t_eta = event.m_jets.at(reco_MC_Wdecay2_from_t_idx)->eta();
           m_MA_Wdecay2_from_t_phi = event.m_jets.at(reco_MC_Wdecay2_from_t_idx)->phi();
-          m_MA_Wdecay2_from_t_e   = event.m_jets.at(reco_MC_Wdecay2_from_t_idx)->e();
+          m_MA_Wdecay2_from_t_m   = event.m_jets.at(reco_MC_Wdecay2_from_t_idx)->m();
         }
 	
 	// Wdecay1 from tbar
         if (truth_MC_Wdecay1_from_tbar_idx >= 0) 
 	    RecoJetMatching(event, akt4truthjets->at(truth_MC_Wdecay1_from_tbar_idx), reco_MC_Wdecay1_from_tbar_dr, reco_MC_Wdecay1_from_tbar_idx);
         
-        m_MC_Wdecay1_from_tbar_pt   = b_from_tbar.Perp();
-        m_MC_Wdecay1_from_tbar_eta  = b_from_tbar.Eta();
-        m_MC_Wdecay1_from_tbar_phi  = b_from_tbar.Phi();
-        m_MC_Wdecay1_from_tbar_e    = b_from_tbar.E();
+        m_MC_Wdecay1_from_tbar_pt   = Wdecay1_from_tbar.Pt();
+        m_MC_Wdecay1_from_tbar_eta  = Wdecay1_from_tbar.Eta();
+        m_MC_Wdecay1_from_tbar_phi  = Wdecay1_from_tbar.Phi();
+        m_MC_Wdecay1_from_tbar_m    = Wdecay1_from_tbar.M();
 	m_MC_Wdecay1_from_tbar_pdgId    = topParton->MC_Wdecay1_from_tbar_pdgId();
+	
         m_MC_Wdecay1_from_tbar_jetidx   = reco_MC_Wdecay1_from_tbar_idx;
         m_MC_Wdecay1_from_tbar_recodr   = reco_MC_Wdecay1_from_tbar_dr;
         m_MC_Wdecay1_from_tbar_truthdr  = truth_MC_Wdecay1_from_tbar_dr;
+	
         if (m_MC_Wdecay1_from_tbar_jetidx>=0) {          
           m_MA_Wdecay1_from_tbar_pt  = event.m_jets.at(reco_MC_Wdecay1_from_tbar_idx)->pt();
           m_MA_Wdecay1_from_tbar_eta = event.m_jets.at(reco_MC_Wdecay1_from_tbar_idx)->eta();
           m_MA_Wdecay1_from_tbar_phi = event.m_jets.at(reco_MC_Wdecay1_from_tbar_idx)->phi();
-          m_MA_Wdecay1_from_tbar_e   = event.m_jets.at(reco_MC_Wdecay1_from_tbar_idx)->e();
+          m_MA_Wdecay1_from_tbar_m   = event.m_jets.at(reco_MC_Wdecay1_from_tbar_idx)->m();
         }
 	
 	// Wdecay2 from tbar
         if (truth_MC_Wdecay2_from_tbar_idx >= 0) 
 	    RecoJetMatching(event, akt4truthjets->at(truth_MC_Wdecay2_from_tbar_idx), reco_MC_Wdecay2_from_tbar_dr, reco_MC_Wdecay2_from_tbar_idx);
 
-        m_MC_Wdecay2_from_tbar_pt   = b_from_tbar.Perp();
-        m_MC_Wdecay2_from_tbar_eta  = b_from_tbar.Eta();
-        m_MC_Wdecay2_from_tbar_phi  = b_from_tbar.Phi();
-        m_MC_Wdecay2_from_tbar_e    = b_from_tbar.E();
+        m_MC_Wdecay2_from_tbar_pt   = Wdecay2_from_tbar.Pt();
+        m_MC_Wdecay2_from_tbar_eta  = Wdecay2_from_tbar.Eta();
+        m_MC_Wdecay2_from_tbar_phi  = Wdecay2_from_tbar.Phi();
+        m_MC_Wdecay2_from_tbar_m    = Wdecay2_from_tbar.M();
 	m_MC_Wdecay2_from_tbar_pdgId    = topParton->MC_Wdecay2_from_tbar_pdgId();
+	
         m_MC_Wdecay2_from_tbar_jetidx   = reco_MC_Wdecay2_from_tbar_idx;
         m_MC_Wdecay2_from_tbar_recodr   = reco_MC_Wdecay2_from_tbar_dr;
         m_MC_Wdecay2_from_tbar_truthdr  = truth_MC_Wdecay2_from_tbar_dr;
+	
         if (m_MC_Wdecay2_from_tbar_jetidx>=0) {          
           m_MA_Wdecay2_from_tbar_pt  = event.m_jets.at(reco_MC_Wdecay2_from_tbar_idx)->pt();
           m_MA_Wdecay2_from_tbar_eta = event.m_jets.at(reco_MC_Wdecay2_from_tbar_idx)->eta();
           m_MA_Wdecay2_from_tbar_phi = event.m_jets.at(reco_MC_Wdecay2_from_tbar_idx)->phi();
-          m_MA_Wdecay2_from_tbar_e   = event.m_jets.at(reco_MC_Wdecay2_from_tbar_idx)->e();
+          m_MA_Wdecay2_from_tbar_m   = event.m_jets.at(reco_MC_Wdecay2_from_tbar_idx)->m();
         }
 	
-    }
+	// Reconstruction of particles from the matched jets
+	
+        TLorentzVector MA_b_from_t_p4;	
+	MA_b_from_t_p4.SetPtEtaPhiM(m_MA_b_from_t_pt, m_MA_b_from_t_eta, m_MA_b_from_t_phi, m_MA_b_from_t_m);
+	
+        TLorentzVector MA_b_from_tbar_p4;	
+	MA_b_from_tbar_p4.SetPtEtaPhiM(m_MA_b_from_tbar_pt, m_MA_b_from_tbar_eta, m_MA_b_from_tbar_phi, m_MA_b_from_tbar_m);
+	
+        TLorentzVector MA_Wdecay1_from_t_p4;	
+	MA_Wdecay1_from_t_p4.SetPtEtaPhiM(m_MA_Wdecay1_from_t_pt, m_MA_Wdecay1_from_t_eta, m_MA_Wdecay1_from_t_phi, m_MA_Wdecay1_from_t_m);
+	
+	TLorentzVector MA_Wdecay2_from_t_p4;	
+	MA_Wdecay2_from_t_p4.SetPtEtaPhiM(m_MA_Wdecay2_from_t_pt, m_MA_Wdecay2_from_t_eta, m_MA_Wdecay2_from_t_phi, m_MA_Wdecay2_from_t_m);
+	
+        TLorentzVector MA_Wdecay1_from_tbar_p4;	
+	MA_Wdecay1_from_tbar_p4.SetPtEtaPhiM(m_MA_Wdecay1_from_tbar_pt, m_MA_Wdecay1_from_tbar_eta, m_MA_Wdecay1_from_tbar_phi, m_MA_Wdecay1_from_tbar_m);
+		
+        TLorentzVector MA_Wdecay2_from_tbar_p4;	
+	MA_Wdecay2_from_tbar_p4.SetPtEtaPhiM(m_MA_Wdecay2_from_tbar_pt, m_MA_Wdecay2_from_tbar_eta, m_MA_Wdecay2_from_tbar_phi, m_MA_Wdecay2_from_tbar_m);	
+	
+	TLorentzVector MA_W_from_t_p4;
+	TLorentzVector MA_W_from_tbar_p4;
+	TLorentzVector MA_t_p4;
+	TLorentzVector MA_tbar_p4;
+	TLorentzVector MA_ttbar_p4;	
+	
+	if (m_MA_Wdecay1_from_t_m>0 && m_MA_Wdecay2_from_t_m>0)	{
+	  MA_W_from_t_p4 = (reco_MC_Wdecay1_from_t_idx!=reco_MC_Wdecay2_from_t_idx) ? MA_Wdecay1_from_t_p4 + MA_Wdecay2_from_t_p4 : MA_Wdecay1_from_t_p4;
+	 
+	  m_MA_W_from_t_pt  = MA_W_from_t_p4.Pt();
+	  m_MA_W_from_t_eta = MA_W_from_t_p4.Eta();
+	  m_MA_W_from_t_phi = MA_W_from_t_p4.Phi();
+	  m_MA_W_from_t_m   = MA_W_from_t_p4.M();
+	
+	}
+	
+	if (m_MA_Wdecay1_from_tbar_m>0 && m_MA_Wdecay2_from_tbar_m>0){
+	  MA_W_from_tbar_p4 = (reco_MC_Wdecay1_from_tbar_idx!=reco_MC_Wdecay2_from_tbar_idx) ? MA_Wdecay1_from_tbar_p4 + MA_Wdecay2_from_tbar_p4 : MA_Wdecay1_from_tbar_p4; 
+	  
+	  m_MA_W_from_tbar_pt  = MA_W_from_tbar_p4.Pt();
+	  m_MA_W_from_tbar_eta = MA_W_from_tbar_p4.Eta();
+	  m_MA_W_from_tbar_phi = MA_W_from_tbar_p4.Phi();
+	  m_MA_W_from_tbar_m   = MA_W_from_tbar_p4.M();
+	
+	}
+
+	if (m_MA_W_from_t_m>0 && m_MA_b_from_t_m>0){
+	  MA_t_p4 = MA_W_from_t_p4 + MA_b_from_t_p4;
+	  
+	  m_MA_t_pt  = MA_t_p4.Pt();
+	  m_MA_t_eta = MA_t_p4.Eta();
+	  m_MA_t_phi = MA_t_p4.Phi();
+	  m_MA_t_m   = MA_t_p4.M();
+	
+	}
+	
+	if (m_MA_W_from_tbar_m>0 && m_MA_b_from_tbar_m>0){
+	  MA_tbar_p4 = MA_W_from_tbar_p4 + MA_b_from_tbar_p4; 
+	  
+	  m_MA_tbar_pt  = MA_tbar_p4.Pt();
+	  m_MA_tbar_eta = MA_tbar_p4.Eta();
+	  m_MA_tbar_phi = MA_tbar_p4.Phi();
+	  m_MA_tbar_m   = MA_tbar_p4.M();
+	
+	}
+	
+	if (MA_t_p4.M()>0 && MA_tbar_p4.M()>0){
+	  MA_ttbar_p4 = MA_t_p4 + MA_tbar_p4 ; 
+	  
+	  m_MA_ttbar_pt  = MA_ttbar_p4.Pt();
+	  m_MA_ttbar_eta = MA_ttbar_p4.Eta();
+	  m_MA_ttbar_phi = MA_ttbar_p4.Phi();
+	  m_MA_ttbar_m   = MA_ttbar_p4.M();
+	
+	}	
+
+    }//if (m_savePartons)
 
     EventSaverFlatNtuple::saveEvent(event, xaodEvent);
 }
