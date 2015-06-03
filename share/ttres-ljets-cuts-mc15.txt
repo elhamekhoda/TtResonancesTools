@@ -1,0 +1,135 @@
+LibraryNames libTopEventSelectionTools libTopEventReconstructionTools libHQTTtResonancesTools libTtResonancesTools
+
+ElectronCollectionName Electrons
+MuonCollectionName Muons
+PhotonCollectionName None
+JetCollectionName AntiKt4EMTopoJets
+# original xAOD without trimmed jets
+LargeJetCollectionName AntiKt10LCTopoTrimmedPtFrac5SmallR20Jets
+LargeJetSubstructure None
+#LargeJetCollectionName AntiKt10LCTopoJets
+#LargeJetSubstructure Trimmer
+TauCollectionName None
+PhotonCollectionName None
+METCollectionName MET_Reference_AntiKt4EMTopo
+
+TruthCollectionName TruthParticles
+#TruthCollectionName None
+TruthJetCollectionName AntiKt4TruthJets
+TopPartonHistory ttbar
+TruthBlockInfo False
+PDFInfo False
+
+ObjectSelectionName top::ObjectLoaderTtres
+OutputFormat top::TtresEventSaverFlatNtuple
+OutputEvents SelectedEvents
+OutputFilename output.root
+PerfStats No
+
+CalculateSF False
+Systematics Nominal
+
+ElectronID LHMedium
+ElectronIDLoose LHLoose
+FakesControlRegionDoLooseMC False
+LooseMETCollectionName MET_Reference_AntiKt4EMTopo
+OverlapRemovalLeptonDef Tight
+ApplyElectronInJetSubtraction True
+
+SELECTION bejets
+INITIAL
+GRL data/TopAnalysis/data12_8TeV.periodB_DetStatus-v61-pro16_DQDefects-00-01-00_PHYS_StandardGRL_All_Good.xml
+#HFOR
+#LAR
+#TRIGDEC HLT_e24_medium_iloose HLT_e60_medium1
+EL_N 25000 >= 1
+EL_N 25000 == 1
+MU_N 25000 == 0
+#TRIGMATCH HLT_e24_medium_iloose HLT_e60_medium1
+#EMU_OVERLAP
+JETCLEAN MediumBad
+MET > 20000
+MET+MWT > 60000
+JET_N 25000 >= 1
+JETCLOSELEPTON_N >= 1
+LARGEJETTTRESSL_N >= 1
+#IP3DSV1_N 1.85 >= 1
+#MV1_N 0.5 >= 1
+#EXAMPLEPLOTS
+#PRINT
+SAVE
+
+SELECTION bmujets
+INITIAL
+GRL data/TopAnalysis/data12_8TeV.periodB_DetStatus-v61-pro16_DQDefects-00-01-00_PHYS_StandardGRL_All_Good.xml
+#HFOR
+#LAR
+#TRIGDEC HLT_mu50 HLT_mu20_iloose_mu8noL1
+MU_N 25000 >= 1
+MU_N 25000 == 1
+EL_N 25000 == 0
+#TRIGMATCH HLT_mu50 HLT_mu20_iloose_mu8noL1
+#EMU_OVERLAP
+JETCLEAN MediumBad
+MET > 20000
+MET+MWT > 60000
+JET_N 25000 >= 1
+JETCLOSELEPTON_N >= 1
+LARGEJETTTRESSL_N >= 1
+#IP3DSV1_N 1.85 >= 1
+#MV1_N 0.5 >= 1
+#EXAMPLEPLOTS
+#PRINT
+SAVE
+
+SELECTION rejets
+INITIAL
+GRL data/TopAnalysis/data12_8TeV.periodB_DetStatus-v61-pro16_DQDefects-00-01-00_PHYS_StandardGRL_All_Good.xml
+#HFOR
+#LAR
+#TRIGDEC HLT_e24_medium_iloose HLT_e60_medium1
+EL_N 25000 >= 1
+EL_N 25000 == 1
+MU_N 25000 == 0
+#TRIGMATCH HLT_e24_medium_iloose HLT_e60_medium1
+#EMU_OVERLAP
+JETCLEAN MediumBad
+MET > 20000
+MET+MWT > 60000
+JET_N 25000 >= 1
+JET_N 25000 >= 2
+JET_N 25000 >= 3
+JET_N 25000 >= 4
+LOG10_CHI2 < 0.9
+#IP3DSV1_N 1.85 >= 1
+#MV1_N 0.5 >= 1
+#EXAMPLEPLOTS
+#PRINT
+SAVE
+
+SELECTION rmujets
+INITIAL
+GRL data/TopAnalysis/data12_8TeV.periodB_DetStatus-v61-pro16_DQDefects-00-01-00_PHYS_StandardGRL_All_Good.xml
+#HFOR
+#LAR
+#TRIGDEC HLT_mu50 HLT_mu20_iloose_mu8noL1
+MU_N 25000 >= 1
+MU_N 25000 == 1
+EL_N 25000 == 0
+#TRIGMATCH HLT_mu50 HLT_mu20_iloose_mu8noL1
+#EMU_OVERLAP
+JETCLEAN MediumBad
+MET > 20000
+MET+MWT > 60000
+JET_N 25000 >= 1
+JET_N 25000 >= 2
+JET_N 25000 >= 3
+JET_N 25000 >= 4
+LOG10_CHI2 < 0.9
+#IP3DSV1_N 1.85 >= 1
+#MV1_N 0.5 >= 1
+#EXAMPLEPLOTS
+#PRINT
+SAVE
+
+
