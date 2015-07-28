@@ -16,7 +16,7 @@ TtresChi2::TtresChi2(std::string units){
   m_Btag = AFFECTBTAG;
   m_RunMode = RUNDEFAULT;
   m_NeutrinoBuilder = new TtresNeutrinoBuilder(units);
-  Init(DATA2015_week1);
+  Init(DATA2015_MC15);
   res_chi2All  = -1.;
   res_chi2WH   = -1.;
   res_chi2TopH = -1.;
@@ -45,9 +45,37 @@ void TtresChi2::Init(Chi2Version version, double highJetMass) {
 
   switch (version){
   
-   case DATA2015_week1:   
+     case DATA2015_MC15:   
+  	// TopAnalysis 2.3.15b
+	// Parton matching: HQTTtResonancesTools
+	// Using MC15 derivations
+	
+  	MjjP=83.65*m_Units;
+  	SMjjP=8.37*m_Units;
+  	
+  	m_TopMinusW_had_mean=91.58*m_Units;
+  	m_TopMinusW_had_sigma=11.09*m_Units;
+  	
+  	m_Top_lep_mean=167.56*m_Units;
+  	m_Top_lep_sigma=21.82*m_Units;
+  	
+  	m_PtDiff_mean=-0.75*m_Units;
+  	m_PtDiff_sigma=34.69*m_Units;
+  	
+  	m_PtDiffRel_mean=-0.0012; 
+  	m_PtDiffRel_sigma=0.0048; 
+	
+  	m_PtDiffRelMass_mean=-0.0012; 
+  	m_PtDiffRelMass_sigma=0.0419; 
+	
+  	MTHJJ=175.04*m_Units; 
+  	STHJJ=14.87*m_Units;
+	break;	
+	
+     case DATA2015_MC14:   
   	// TopAnalysis 2.3.12
 	// Parton matching: HQTTtResonancesTools
+	// Using MC14 derivations
 	
   	MjjP=84.58*m_Units;
   	SMjjP=11.41*m_Units;

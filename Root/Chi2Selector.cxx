@@ -10,7 +10,7 @@ Chi2Selector::Chi2Selector(const std::string& params) : SignValueSelector("LOG10
 
   std::string units = "MeV";  
   m_chi2 = new TtresChi2(units);
-  m_chi2->Init(TtresChi2::DATA2015_week1);
+  m_chi2->Init(TtresChi2::DATA2015_MC15);
   
 }//Chi2Selector::Chi2Selector
 
