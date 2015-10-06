@@ -1,4 +1,8 @@
-2015-10-06 S. Marino Romano <sromanos@cern.ch>
+2015-10-06 S. Calvet <scalvet@cern.ch>
+	* Fix small bug in lepton definition
+	* TtResonancesTools-01-00-03
+
+2015-10-06 S. Calvet <scalvet@cern.ch>
 	* Btagging information changed from MV1 to MV2C20
 	* Add a protection in case there are less than 4 jets
 	* TtResonancesTools-01-00-02

@@ -34,8 +34,8 @@ bool Chi2Selector::apply(const top::Event& event) const {
   
   //leptons
   TLorentzVector lepton;   
-  if (event.m_electrons.size()==1 || event.m_muons.size()==0)  		lepton = event.m_electrons.at(0)->p4();
-  else if (event.m_electrons.size()==0 || event.m_muons.size()==1)	lepton = event.m_muons.at(0)->p4();    
+  if      (event.m_electrons.size()==1 && event.m_muons.size()==0)  	lepton = event.m_electrons.at(0)->p4();
+  else if (event.m_electrons.size()==0 && event.m_muons.size()==1)	lepton = event.m_muons.at(0)->p4();    
   else return false;
   
   //jets     
