@@ -321,6 +321,9 @@ bool TtresChi2::findMinChiSquare(TLorentzVector* L, const std::vector<TLorentzVe
   	std::cerr << "ERROR : TtresChi2::findMinChiSquare: Lepton is NULL" << std::endl;
   	return false;
   }
+  if (n_jets<4) {
+  	return false;
+  }
   
   if(m_Btag==AFFECTBTAG){
   	for(unsigned int ib = 0; ib<(unsigned int)isJetBtagged->size(); ++ib){

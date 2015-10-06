@@ -1,3 +1,8 @@
+2015-10-06 S. Marino Romano <sromanos@cern.ch>
+	* Btagging information changed from MV1 to MV2C20
+	* Add a protection in case there are less than 4 jets
+	* TtResonancesTools-01-00-02
+
 2015-07-28 S. Marino Romano <sromanos@cern.ch>
 	* Updating chi2 parameters using MC15 Z prime samples
 	* TtResonancesTools-01-00-01.

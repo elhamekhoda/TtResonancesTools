@@ -11,6 +11,7 @@ Chi2Selector::Chi2Selector(const std::string& params) : SignValueSelector("LOG10
   std::string units = "MeV";  
   m_chi2 = new TtresChi2(units);
   m_chi2->Init(TtresChi2::DATA2015_MC15);
+  std::cout << "Chi2Selector is going to use mv2c20>-0.0436 to get the b-tagging information" << std::endl;
   
 }//Chi2Selector::Chi2Selector
 
@@ -41,8 +42,9 @@ bool Chi2Selector::apply(const top::Event& event) const {
   for (size_t z = 0; z < event.m_jets.size(); ++z) {
       vjets.push_back(new TLorentzVector());
       vjets[z]->SetPtEtaPhiE(event.m_jets[z]->pt(), event.m_jets[z]->eta(), event.m_jets[z]->phi(), event.m_jets[z]->e());      
-      const xAOD::BTagging *myBTag = event.m_jets[z]->btagging();
-      vjets_btagged.push_back(myBTag->SV1plusIP3D_discriminant() > 1.85); // best discriminant available for 8 TeV (cut at 70%)
+      double mv2c20_discriminant = 0.;
+      const bool hasMv2c20 = event.m_jets[z]->btagging()->MVx_discriminant("MV2c20", mv2c20_discriminant);
+      vjets_btagged.push_back( hasMv2c20 && mv2c20_discriminant>-0.0436); 
   }//for
   
   //met
