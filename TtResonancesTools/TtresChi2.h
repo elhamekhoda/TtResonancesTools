@@ -1,12 +1,13 @@
-#ifndef TtresChi2_H
-#define TtresChi2_H
+#ifndef TTRESCHI2_H
+#define TTRESCHI2_H
 
-#include<iostream>
+#include <iostream>
 #include <string>
 #include <vector>
 #include "TLorentzVector.h"
 #include "TopEventReconstructionTools/TtresNeutrinoBuilder.h"
 
+namespace top {
 
 class TtresChi2{
  public:
@@ -20,8 +21,6 @@ class TtresChi2{
   enum RunMode {RUNDEFAULT, RUNSTUDY};
 
  private:
-  TtresChi2(const TtresChi2&);
-  TtresChi2& operator=(const TtresChi2&);
   std::vector<TLorentzVector*> GetNeutrinos(TLorentzVector*, TLorentzVector*);
 
   double MjjP,  SMjjP,  m_TopMinusW_had_mean,  m_TopMinusW_had_sigma,  m_Top_lep_mean,  m_Top_lep_sigma, m_PtDiff_mean, m_PtDiff_sigma, m_PtDiffRel_mean, m_PtDiffRel_sigma, m_PtDiffRelMass_mean, m_PtDiffRelMass_sigma, MTHJJ, STHJJ;
@@ -60,8 +59,9 @@ class TtresChi2{
   
   int m_nChi2Values;
   
+  
  public:
-  void Init(Chi2Version version = DATA2012SUMMER2013, double highJetMass = 60.0);
+  void Init(Chi2Version version, double highJetMass = 60.0);
   void Reset();
   bool findMinChiSquare_HMelseLM(TLorentzVector*, const std::vector<TLorentzVector*>*, const std::vector<bool>*, TLorentzVector*, int&, int&, int&, int&, int&, double&, double&, double&);
   bool findMinChiSquare_LMelseHM(TLorentzVector*, const std::vector<TLorentzVector*>*, const std::vector<bool>*, TLorentzVector*, int&, int&, int&, int&, int&, double&, double&, double&);
@@ -118,5 +118,5 @@ class TtresChi2{
 
 };
 
-
+}
 #endif

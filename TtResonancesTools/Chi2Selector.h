@@ -2,11 +2,8 @@
 #define CHI2SELECTOR_H
 
 #include <string>
-#include "TH1F.h"
-#include "TH2F.h"
 #include "TopEvent/Event.h"
 
-#include "TopEventReconstructionTools/TtresNeutrinoBuilder.h"
 #include "TtResonancesTools/TtresChi2.h"
 
 #include "TopEventSelectionTools/SignValueSelector.h"
@@ -30,8 +27,8 @@ class Chi2Selector : public SignValueSelector {
   private:
     float m_Units;
 
-    TtresNeutrinoBuilder * m_neutrinoBuilder;
     TtresChi2 * m_chi2;
+    
 };
 
 }//namespace top 

@@ -2,7 +2,6 @@
 #include "TopEvent/Event.h"
 #include "TLorentzVector.h"
 #include <vector>
-#include <string>
 
 namespace top {
 
@@ -12,7 +11,7 @@ Chi2Selector::Chi2Selector(const std::string& params) : SignValueSelector("LOG10
   m_chi2 = new TtresChi2(units);
   m_chi2->Init(TtresChi2::DATA2015_MC15);
   std::cout << "Chi2Selector is going to use mv2c20>-0.0436 to get the b-tagging information" << std::endl;
-  
+   
 }//Chi2Selector::Chi2Selector
 
 

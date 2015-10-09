@@ -8,7 +8,7 @@
 #pragma link C++ nestedclass;
 
 //for loading the object selection at run time
-#pragma link C++ class top::TtresChi2+;
 #pragma link C++ class top::Chi2Selector+;
+#pragma link C++ class top::TtresChi2+;
 
 #endif

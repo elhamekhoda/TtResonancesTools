@@ -4,6 +4,7 @@
  ************************************************************************/
 
 #include "TtResonancesTools/TtresChi2.h"
+namespace top {
 
 //_________________________________________________________________________________________________
 TtresChi2::TtresChi2(std::string units){
@@ -30,6 +31,7 @@ TtresChi2::TtresChi2(std::string units){
   m_TlChi2Value     = -1;
   m_PtDiffChi2Value = -1;
   m_category	    = -1;
+
 }
 
 //_________________________________________________________________________________________________
@@ -40,7 +42,7 @@ TtresChi2::~TtresChi2(){
 
 //_________________________________________________________________________________________________
 void TtresChi2::Init(Chi2Version version, double highJetMass) {
-
+  if(m_debug>0) std::cout << "TtresChi2 in Init()" << std::endl;
   m_highJetMass = highJetMass;
 
   switch (version){
@@ -781,3 +783,4 @@ bool TtresChi2::findMinChiSquare_VeryHighMass(TLorentzVector* L, const std::vect
 }
 
 
+}
