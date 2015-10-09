@@ -1,6 +1,8 @@
 2015-10-09 S. Calvet <scalvet@cern.ch>
 	* Cleaning
 	* Unexplained fix of the strange disappearance of the cout
+	* Optimizing the speed
+	* Add function that return the TtresChi2 tool of Chi2Selector
 
 2015-10-06 S. Calvet <scalvet@cern.ch>
 	* Fix small bug in lepton definition

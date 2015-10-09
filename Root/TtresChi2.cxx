@@ -18,20 +18,7 @@ TtresChi2::TtresChi2(std::string units){
   m_RunMode = RUNDEFAULT;
   m_NeutrinoBuilder = new TtresNeutrinoBuilder(units);
   Init(DATA2015_MC15);
-  res_chi2All  = -1.;
-  res_chi2WH   = -1.;
-  res_chi2TopH = -1.;
-  res_chi2TopL = -1.;
-  res_Mtl      = -1.;
-  res_Mwh      = -1.;
-  res_Mth      = -1.;
-  res_Mtt      = -1.;
-  m_WhChi2Value     = -1;
-  m_ThWhChi2Value   = -1;
-  m_TlChi2Value     = -1;
-  m_PtDiffChi2Value = -1;
-  m_category	    = -1;
-
+  this->Reset();
 }
 
 //_________________________________________________________________________________________________
@@ -210,39 +197,41 @@ void TtresChi2::Reset(){
   m_TlChi2Value     = -1;
   m_PtDiffChi2Value = -1;
   m_category	= -1;
-  m_nChi2Values = 0;
-  m_chi2Values.clear();
-  m_chi2Wh_Values.clear();
-  m_chi2Th_Values.clear();
-  m_chi2ThWh_Values.clear();
-  m_chi2Tl_Values.clear();
-  m_i_Wq1.clear();
-  m_i_Wq2.clear();
-  m_i_Thb.clear();
-  m_i_Tlb.clear();
-  m_i_n.clear();
-  m_chi2PtDiff_Values.clear();
-  m_PtDiff_Values.clear();
-  m_Wh_Values.clear();
-  m_ThWh_Values.clear();
-  m_Th_Values.clear();
-  m_Tl_Values.clear();  
-  m_chi2Values.reserve(10000);
-  m_chi2Wh_Values.reserve(10000);
-  m_chi2Th_Values.reserve(10000);
-  m_chi2ThWh_Values.reserve(10000);
-  m_chi2Tl_Values.reserve(10000);
-  m_chi2PtDiff_Values.reserve(10000);
-  m_i_Wq1.reserve(10000);
-  m_i_Wq2.reserve(10000);
-  m_i_Thb.reserve(10000);
-  m_i_Tlb.reserve(10000);
-  m_i_n.reserve(10000);
-  m_PtDiff_Values.reserve(10000);
-  m_Wh_Values.reserve(10000);
-  m_ThWh_Values.reserve(10000);
-  m_Th_Values.reserve(10000);
-  m_Tl_Values.reserve(10000);  
+  if(m_RunMode==RUNSTUDY){
+  	m_nChi2Values = 0;
+  	m_chi2Values.clear();
+ 	m_chi2Wh_Values.clear();
+  	m_chi2Th_Values.clear();
+  	m_chi2ThWh_Values.clear();
+  	m_chi2Tl_Values.clear();
+  	m_i_Wq1.clear();
+  	m_i_Wq2.clear();
+  	m_i_Thb.clear();
+  	m_i_Tlb.clear();
+  	m_i_n.clear();
+  	m_chi2PtDiff_Values.clear();
+  	m_PtDiff_Values.clear();
+  	m_Wh_Values.clear();
+  	m_ThWh_Values.clear();
+  	m_Th_Values.clear();
+  	m_Tl_Values.clear();  
+  	m_chi2Values.reserve(10000);
+  	m_chi2Wh_Values.reserve(10000);
+  	m_chi2Th_Values.reserve(10000);
+  	m_chi2ThWh_Values.reserve(10000);
+  	m_chi2Tl_Values.reserve(10000);
+  	m_chi2PtDiff_Values.reserve(10000);
+  	m_i_Wq1.reserve(10000);
+  	m_i_Wq2.reserve(10000);
+  	m_i_Thb.reserve(10000);
+  	m_i_Tlb.reserve(10000);
+  	m_i_n.reserve(10000);
+  	m_PtDiff_Values.reserve(10000);
+  	m_Wh_Values.reserve(10000);
+  	m_ThWh_Values.reserve(10000);
+  	m_Th_Values.reserve(10000);
+  	m_Tl_Values.reserve(10000);
+  } 
   return;
 }
 
@@ -340,12 +329,11 @@ bool TtresChi2::findMinChiSquare(TLorentzVector* L, const std::vector<TLorentzVe
   for (unsigned int i=0; i<(unsigned int)n_jets; i++){
     const TLorentzVector* I = jetVector->at(i);
     for (unsigned int j=i+1; j<(unsigned int)n_jets; j++){
-      const TLorentzVector* J = jetVector->at(j);
+      const TLorentzVector Whad = (*I) + *jetVector->at(j);
       for (unsigned int k=0; k< (unsigned int)n_jets; k++){
 	if ( k!=i && k!=j) {
 	  const TLorentzVector* K = jetVector->at(k);
-	  TLorentzVector TopH = (*I) + (*J) + (*K);
-	  TLorentzVector Whad = (*I) + (*J);
+	  TLorentzVector TopH = Whad + (*K);
 	  for (unsigned int n=0; n< neutrinoVector.size(); n++){
 
 	    TLorentzVector* N = neutrinoVector[n];
@@ -718,8 +706,8 @@ bool TtresChi2::findMinChiSquare_VeryHighMass(TLorentzVector* L, const std::vect
 	for (unsigned int m=0; m< (unsigned int)n_jets; m++){
 	  if (m!=i) {
 	    const TLorentzVector* M = jetVector->at(m);
-	    TLorentzVector Tlv = Wlv + (*M);
-	    TLorentzVector Tt = Tlv + TopH;
+	    const TLorentzVector Tlv = Wlv + (*M);
+	    const TLorentzVector Tt = Tlv + TopH;
 
 	    double HMtoptemp = I->M();
 	    double chi2H = 1.;
