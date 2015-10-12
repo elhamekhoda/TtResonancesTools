@@ -189,9 +189,13 @@ void TtresChi2::Reset(){
   res_chi2TopH = -1.;
   res_chi2TopL = -1.;
   res_Mwh      = -1.;
-  res_Mth      = -1.;
-  res_Mtl      = -1.;
-  res_Mtt      = -1.;
+  m_res_Wl.SetPtEtaPhiM(1., 0., 0., 0.);
+  m_res_Wh.SetPtEtaPhiM(1., 0., 0., 0.);
+  m_res_Bl.SetPtEtaPhiM(1., 0., 0., 0.);
+  m_res_Bh.SetPtEtaPhiM(1., 0., 0., 0.);
+  m_res_Tl.SetPtEtaPhiM(1., 0., 0., 0.);
+  m_res_Th.SetPtEtaPhiM(1., 0., 0., 0.);
+  m_res_TT.SetPtEtaPhiM(1., 0., 0., 0.);
   m_WhChi2Value	    = -1;
   m_ThWhChi2Value   = -1;
   m_TlChi2Value     = -1;
@@ -332,17 +336,15 @@ bool TtresChi2::findMinChiSquare(TLorentzVector* L, const std::vector<TLorentzVe
       const TLorentzVector Whad = (*I) + *jetVector->at(j);
       for (unsigned int k=0; k< (unsigned int)n_jets; k++){
 	if ( k!=i && k!=j) {
-	  const TLorentzVector* K = jetVector->at(k);
-	  TLorentzVector TopH = Whad + (*K);
+	  const TLorentzVector TopH =  Whad + *jetVector->at(k);
 	  for (unsigned int n=0; n< neutrinoVector.size(); n++){
 
-	    TLorentzVector* N = neutrinoVector[n];
+	    const TLorentzVector* N = neutrinoVector[n];
 
-	    TLorentzVector Wlv = (*N) + (*L);
+	    const TLorentzVector Wlv = (*N) + (*L);
 	    for (unsigned int m=0; m< (unsigned int)n_jets; m++){
 	      if (m!=i && m!=j && m!=k) {
-	        const TLorentzVector* M = jetVector->at(m);
-		TLorentzVector Tlv = Wlv + (*M);
+		TLorentzVector Tlv = Wlv + *jetVector->at(m);
 		TLorentzVector Tt = Tlv + TopH;
 		double chi2WH = pow((Whad.M()-MjjP)/SMjjP,2);
 		double chi2H = chi2WH + pow((TopH.M()-Whad.M()-m_TopMinusW_had_mean)/m_TopMinusW_had_sigma,2);
@@ -427,11 +429,14 @@ bool TtresChi2::findMinChiSquare(TLorentzVector* L, const std::vector<TLorentzVe
                         i_b_had=k;
                         i_b_lep=m;
                         ign1=n;
-			res_Mtl=Tlv.M();
 			res_Mwh=Whad.M();
-			res_Mth=TopH.M();
-			res_Mtt=Tt.M();
-			res_Tt = Tt;  
+			m_res_Wl = Wlv;  
+			m_res_Wh = Whad;  
+			m_res_Bl = *jetVector->at(m);  
+			m_res_Bh = *jetVector->at(k);  
+			m_res_Tl = Tlv;  
+			m_res_Th = TopH;  
+			m_res_TT = Tt; 
 			
 			//============================
 			// bjet category splitting
@@ -526,13 +531,12 @@ chi2ming1H, double& chi2ming1L){
 
 	for (unsigned int n=0; n< neutrinoVector.size(); n++){
 
-	  TLorentzVector* N = neutrinoVector[n];
+	  const TLorentzVector* N = neutrinoVector[n];
 
 	  TLorentzVector Wlv = (*N) + (*L);
 	  for (unsigned int m=0; m<(unsigned int) n_jets; m++){
 	    if (m!=i && m!=j) {
-	      const TLorentzVector* M = jetVector->at(m);
-	      TLorentzVector Tlv = Wlv + (*M);
+	      TLorentzVector Tlv = Wlv + *jetVector->at(m);
 	      TLorentzVector Tt = Tlv + TopH;
 
 	      double HMtoptemp = I->M();
@@ -615,11 +619,11 @@ chi2ming1H, double& chi2ming1L){
 			i_q2_W=j;
 			i_b_lep=m;
 			ign1=n;
-			res_Mtl=Tlv.M();
-			//res_Mwh is not defined here
-			res_Mth=TopH.M();
-			res_Mtt=Tt.M();
-			res_Tt = Tt;			
+			m_res_Wl = Wlv;   
+			m_res_Bl = *jetVector->at(m); 
+			m_res_Tl = Tlv;  
+			m_res_Th = TopH;  
+			m_res_TT = Tt; 		
 			
 			//============================
 			// bjet category splitting
@@ -700,13 +704,12 @@ bool TtresChi2::findMinChiSquare_VeryHighMass(TLorentzVector* L, const std::vect
     if (I->M()>150.*m_Units){
       for (unsigned int n=0; n< neutrinoVector.size(); n++){
 
-	TLorentzVector* N = neutrinoVector[n];
+	const TLorentzVector* N = neutrinoVector[n];
 
 	TLorentzVector Wlv = (*N) + (*L);
 	for (unsigned int m=0; m< (unsigned int)n_jets; m++){
 	  if (m!=i) {
-	    const TLorentzVector* M = jetVector->at(m);
-	    const TLorentzVector Tlv = Wlv + (*M);
+	    const TLorentzVector Tlv = Wlv + *jetVector->at(m);
 	    const TLorentzVector Tt = Tlv + TopH;
 
 	    double HMtoptemp = I->M();
@@ -744,11 +747,11 @@ bool TtresChi2::findMinChiSquare_VeryHighMass(TLorentzVector* L, const std::vect
 		i_q2_W=i;
 		i_b_lep=m;
 		ign1=n;
-		res_Mtl=Tlv.M();
-		//res_Mwh is not defined here
-		res_Mth=TopH.M();
-		res_Mtt=Tt.M();
-		res_Tt = Tt;
+		m_res_Wl = Wlv;   
+		m_res_Bl = *jetVector->at(m); 
+		m_res_Tl = Tlv;  
+		m_res_Th = TopH;  
+		m_res_TT = Tt; 
 	      }		
 	    } // end of case a minimal chisquare was found
 	  } // end of case unique combination

@@ -24,7 +24,7 @@ class Chi2Selector : public SignValueSelector {
      
     bool apply(const top::Event& event) const override;
     
-    inline const TtresChi2* getChi2Tool() {return m_chi2;};
+    inline TtresChi2* getChi2Tool() {return m_chi2;};
 
   private:
     float m_Units;

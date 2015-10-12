@@ -35,8 +35,8 @@ class TtresChi2{
   double m_highJetMass;
   int m_category;
 
-  double res_chi2All, res_chi2WH, res_chi2TopH, res_chi2TopL, res_Mtl, res_Mwh, res_Mth, res_Mtt;
-  TLorentzVector res_Tt;
+  double res_chi2All, res_chi2WH, res_chi2TopH, res_chi2TopL, res_Mwh;
+  TLorentzVector m_res_TT, m_res_Tl, m_res_Th, m_res_Bl, m_res_Bh, m_res_Wl, m_res_Wh;
 
   std::vector < double > m_chi2Values;
   std::vector < double > m_chi2Wh_Values;
@@ -85,10 +85,10 @@ class TtresChi2{
   inline double getResult_Chi2WH()  	{return res_chi2WH;}
   inline double getResult_Chi2TopH()	{return res_chi2TopH;}
   inline double getResult_Chi2TopL()	{return res_chi2TopL;}
-  inline double getResult_Mtl()     	{return res_Mtl;}
+  inline double getResult_Mtl()     	{return m_res_Tl.M();}
   inline double getResult_Mwh()     	{return res_Mwh;}
-  inline double getResult_Mth()     	{return res_Mth;}
-  inline double getResult_Mtt()     	{return res_Mtt;}
+  inline double getResult_Mth()     	{return m_res_Th.M();}
+  inline double getResult_Mtt()     	{return m_res_TT.M();}
   
   inline std::vector < double > getAllChi2Values() 		{return m_chi2Values;	    }
   inline std::vector < double > getAllWh_Chi2Values() 		{return m_chi2Wh_Values;    }
@@ -114,7 +114,13 @@ class TtresChi2{
   inline double getPtDiffChi2Value()   	{return m_PtDiffChi2Value;}
   inline int getNChi2Values()       	{return m_nChi2Values;	}
   inline int getCategory()		{return m_category;	}
-  inline TLorentzVector getResult_Tlv()	{return res_Tt;		}
+  inline TLorentzVector getResult_Wl()  {return m_res_Wl;	}
+  inline TLorentzVector getResult_Wh()	{return m_res_Wh;	}
+  inline TLorentzVector getResult_Bl()  {return m_res_Bl;	}
+  inline TLorentzVector getResult_Bh()	{return m_res_Bh;	}
+  inline TLorentzVector getResult_Tl()  {return m_res_Tl;	}
+  inline TLorentzVector getResult_Th()	{return m_res_Th;	}
+  inline TLorentzVector getResult_TT()	{return m_res_TT;	}
 
 };
 
