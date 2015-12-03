@@ -29,4 +29,7 @@
         * Obsolete package. Reciclying it for common usage.
 	* Adding chi2 minimisation algorithm for the resolved selection  
 	* TtResonancesTools-00-00-00-01
+2015-03-12 O. Gabizon <gabizon@uni-wuppertal.de>
+	* Adding code to calculate electroweak corrections
+	* TtResonancesTools-01-00-06
 
