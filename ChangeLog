@@ -1,5 +1,6 @@
 2016-06-29 S. Ganguly <sanmay.ganguly@cern.ch>
-	* Adding the chi^2 parameter values for MC15C samples.   
+	* Adding the chi^2 parameter values for MC15C samples. 
+	* TtResonancesTools-01-00-05
 
 2015-10-12 S. Calvet <scalvet@cern.ch>
 	* Cleaning. Add more functions to recover the results
