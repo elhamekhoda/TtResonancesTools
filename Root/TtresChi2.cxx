@@ -33,7 +33,37 @@ void TtresChi2::Init(Chi2Version version, double highJetMass) {
   m_highJetMass = highJetMass;
 
   switch (version){
-  
+ 
+
+     case DATA2015_MC15C:
+        // TopAnalysis 2.4.12
+        // Parton matching: HQTTtResonancesTools
+        // Using MC15C derivations
+
+        MjjP=80.51*m_Units;
+        SMjjP=12.07*m_Units;
+
+        m_TopMinusW_had_mean=85.17*m_Units;
+        m_TopMinusW_had_sigma=16.05*m_Units;
+
+        m_Top_lep_mean=167.36*m_Units;
+        m_Top_lep_sigma=25.41*m_Units;
+
+        m_PtDiff_mean=-0.23*m_Units;
+        m_PtDiff_sigma=18.85*m_Units;
+
+        m_PtDiffRel_mean=-0.0012;
+        m_PtDiffRel_sigma=0.0048;
+
+        m_PtDiffRelMass_mean=-0.0012;
+        m_PtDiffRelMass_sigma=0.0419;
+
+        MTHJJ=175.04*m_Units;
+        STHJJ=14.87*m_Units;
+        break;
+
+
+ 
      case DATA2015_MC15:   
   	// TopAnalysis 2.3.15b
 	// Parton matching: HQTTtResonancesTools
