@@ -1,3 +1,8 @@
+2016-07-13 S. Ganguly <sanmay.ganguly@cern.ch>
+	* Updating the btagging information in Chi2Selector.
+	* The b-tagging has been switched to mv2c10.
+	* TtResonancesTools-01-00-06
+
 2016-06-29 S. Ganguly <sanmay.ganguly@cern.ch>
 	* Adding the chi^2 parameter values for MC15C samples. 
 	* TtResonancesTools-01-00-05
