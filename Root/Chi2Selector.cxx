@@ -9,8 +9,8 @@ Chi2Selector::Chi2Selector(const std::string& params) : SignValueSelector("LOG10
 
   std::string units = "MeV";  
   m_chi2 = new TtresChi2(units);
-  m_chi2->Init(TtresChi2::DATA2015_MC15);
-  std::cout << "Chi2Selector is going to use mv2c20>-0.0436 to get the b-tagging information" << std::endl;
+  m_chi2->Init(TtresChi2::DATA2015_MC15C);
+  std::cout << "Chi2Selector is going to use mv2c10> 0.6455 to get the b-tagging information" << std::endl;
    
 }//Chi2Selector::Chi2Selector
 
@@ -41,9 +41,29 @@ bool Chi2Selector::apply(const top::Event& event) const {
   for (size_t z = 0; z < event.m_jets.size(); ++z) {
       vjets.push_back(new TLorentzVector());
       vjets[z]->SetPtEtaPhiE(event.m_jets[z]->pt(), event.m_jets[z]->eta(), event.m_jets[z]->phi(), event.m_jets[z]->e());      
+      /*
       double mv2c20_discriminant = 0.;
       const bool hasMv2c20 = event.m_jets[z]->btagging()->MVx_discriminant("MV2c20", mv2c20_discriminant);
       vjets_btagged.push_back( hasMv2c20 && mv2c20_discriminant>-0.0436); 
+      */
+      bool is_btagged(false);
+      for (size_t bidx = 0; bidx < event.m_trackJets.size(); ++bidx)
+       {
+        TLorentzVector tmpTJet;
+        tmpTJet.SetPtEtaPhiE(event.m_trackJets[bidx]->pt(),event.m_trackJets[bidx]->eta(),event.m_trackJets[bidx]->phi(),
+                             event.m_trackJets[bidx]->e());
+
+        if(tmpTJet.DeltaR(*vjets[z]) <= 0.4) {
+        double mv2c10_discriminant = 0.;
+        const bool hasMv2c10 = event.m_jets[z]->btagging()->MVx_discriminant("MV2c10", mv2c10_discriminant);
+        if(hasMv2c10 && mv2c10_discriminant> 0.6455)
+        is_btagged = true;
+        break; 
+        } // if(tmpTJet.DeltaR(*vjets[z]) <= 0.4) 
+      } // for (size_t bidx = 0; bidx < evt.tjet().size(); ++bidx) 
+
+      vjets_btagged.push_back(is_btagged);
+
   }//for
   
   //met
