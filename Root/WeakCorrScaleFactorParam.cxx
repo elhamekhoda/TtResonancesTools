@@ -138,8 +138,8 @@ double WeakCorr::WeakCorrScaleFactorParam::getWeight(
     TLorentzVector ttbarSystem = topMomentum + antitopMomentum;
     const double shat = ttbarSystem.M2(); // give it a value from Marino's varaibles -  MC_ttbar_lpj_beforeFSR_m
 
-    TLorentzVector beam1(0., 0.,  13000., 13000.);
-    TLorentzVector beam2(0., 0., -13000., 13000.);
+    TLorentzVector beam1(0., 0.,  6500., 6500.);
+    TLorentzVector beam2(0., 0., -6500., 6500.);
     TVector3 boostVec = ttbarSystem.BoostVector();
     boostVec *= -1.;
 
