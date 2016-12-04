@@ -1,3 +1,7 @@
+2016-12-04 D. Ferreira de Lima <dferreir@cern.ch>
+	* Fixed bug in Chi2Selector: it was using calo jet b-tagging.
+	* TtResonancesTools-01-00-09
+
 2016-07-13 S. Ganguly <sanmay.ganguly@cern.ch>
 	* Updating the btagging information in Chi2Selector.
 	* The b-tagging has been switched to mv2c10.

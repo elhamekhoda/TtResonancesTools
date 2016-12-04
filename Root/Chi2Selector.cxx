@@ -54,11 +54,11 @@ bool Chi2Selector::apply(const top::Event& event) const {
                              event.m_trackJets[bidx]->e());
 
         if(tmpTJet.DeltaR(*vjets[z]) <= 0.4) {
-        double mv2c10_discriminant = 0.;
-        const bool hasMv2c10 = event.m_jets[z]->btagging()->MVx_discriminant("MV2c10", mv2c10_discriminant);
-        if(hasMv2c10 && mv2c10_discriminant> 0.6455)
-        is_btagged = true;
-        break; 
+          double mv2c10_discriminant = 0.;
+          const bool hasMv2c10 = event.m_trackJets[bidx]->btagging()->MVx_discriminant("MV2c10", mv2c10_discriminant);
+          if(hasMv2c10 && mv2c10_discriminant> 0.6455)
+            is_btagged = true;
+          break; 
         } // if(tmpTJet.DeltaR(*vjets[z]) <= 0.4) 
       } // for (size_t bidx = 0; bidx < evt.tjet().size(); ++bidx) 
 
