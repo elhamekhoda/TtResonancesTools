@@ -31,5 +31,5 @@ atlas_add_library( TtResonancesTools Root/*.cxx Root/*.h Root/*.icc
                    INCLUDE_DIRS ${ROOT_INCLUDE_DIRS} )
 
 # Install data files from the package:
-atlas_install_data( DIRECTORY share )
+atlas_install_data( share/* )
 
