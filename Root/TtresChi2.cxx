@@ -35,6 +35,47 @@ void TtresChi2::Init(Chi2Version version, double highJetMass) {
   switch (version){
  
 
+     
+     case DATA2017_MC16_CaloJets:
+    	//Rel21.0: values obtained for Z' 1TeV-1 TeV including njets>=4 events
+   	 //         EM+JES jets
+    	MjjP=81.82*m_Units;
+    	SMjjP=10.63*m_Units;
+	
+    	m_TopMinusW_had_mean=88.31*m_Units;
+    	m_TopMinusW_had_sigma=13.69*m_Units;
+	
+    	m_Top_lep_mean=165.04*m_Units;
+    	m_Top_lep_sigma=24.99*m_Units;
+	
+    	m_PtDiff_mean=-0.439*m_Units;
+    	m_PtDiff_sigma=13.98*m_Units;
+   	 
+    	MTHJJ=-1.;
+    	STHJJ=-1.;
+   	 break;
+
+
+     case DATA2017_MC16_PFlowJets:
+    	//Rel21.0: values obtained for Z' 1TeV-1 TeV including njets>=4 events
+    	//         EM+JES jets
+    	MjjP=80.34*m_Units;
+    	SMjjP=10.25*m_Units;
+	
+    	m_TopMinusW_had_mean=87.61*m_Units;
+    	m_TopMinusW_had_sigma=13.06*m_Units;
+	
+    	m_Top_lep_mean=165.00*m_Units;
+    	m_Top_lep_sigma=24.21*m_Units;
+	
+   	 m_PtDiff_mean=-0.550*m_Units;
+    	m_PtDiff_sigma=12.51*m_Units;
+    	
+    	MTHJJ=-1.;
+    	STHJJ=-1.;
+    	break;
+     
+      
      case DATA2015_MC15C:
         // TopAnalysis 2.4.12
         // Parton matching: HQTTtResonancesTools
