@@ -34,6 +34,54 @@ void TtresChi2::Init(Chi2Version version, double highJetMass) {
 
   switch (version){
  
+    case DATA_MC_Run2_TrackJET:    
+
+      MjjP=80.36*m_Units;
+      SMjjP=12.50*m_Units;
+
+      m_TopMinusW_had_mean=86.12*m_Units;
+      m_TopMinusW_had_sigma=16.64*m_Units;
+
+      m_Top_lep_mean=165.95*m_Units;
+      m_Top_lep_sigma=26.03*m_Units;
+
+      m_PtDiff_mean=-3.86*m_Units;
+      m_PtDiff_sigma=37.42*m_Units;
+
+      m_PtDiffRel_mean=-0.0012;
+      m_PtDiffRel_sigma=0.0048;
+      
+      m_PtDiffRelMass_mean=-0.0012;
+      m_PtDiffRelMass_sigma=0.0419;
+      
+      MTHJJ=175.04*m_Units;
+      STHJJ=14.87*m_Units;
+      break;
+
+
+    case DATA_MC_Run2_CaloJET:
+      
+      MjjP=80.48*m_Units;
+      SMjjP=12.41*m_Units;
+      
+      m_TopMinusW_had_mean=86.26*m_Units;
+      m_TopMinusW_had_sigma=16.61*m_Units;
+      
+      m_Top_lep_mean=165.92*m_Units;
+      m_Top_lep_sigma=26.18*m_Units;
+      
+      m_PtDiff_mean=-3.65*m_Units;
+      m_PtDiff_sigma=38.57*m_Units;
+      
+      m_PtDiffRel_mean=-0.0012;
+      m_PtDiffRel_sigma=0.0048;
+      
+      m_PtDiffRelMass_mean=-0.0012;
+      m_PtDiffRelMass_sigma=0.0419;
+      
+      MTHJJ=175.04*m_Units;
+      STHJJ=14.87*m_Units;
+      break;
 
      
      case DATA2017_MC16_CaloJets:
