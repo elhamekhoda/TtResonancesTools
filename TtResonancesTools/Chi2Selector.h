@@ -5,7 +5,10 @@
 #include "TopEvent/Event.h"
 
 #include "TtResonancesTools/TtresChi2.h"
-
+#include "xAODBTaggingEfficiency/BTaggingEfficiencyTool.h"
+#include "xAODBTaggingEfficiency/BTaggingSelectionTool.h"
+#include "FTagAnalysisInterfaces/IBTaggingSelectionTool.h"
+#include "FTagAnalysisInterfaces/IBTaggingEfficiencyTool.h"
 #include "TopEventSelectionTools/SignValueSelector.h"
 
 namespace top {
@@ -28,7 +31,7 @@ class Chi2Selector : public SignValueSelector {
 
   private:
     float m_Units;
-
+    BTaggingSelectionTool* tempSelTool;
     TtresChi2 * m_chi2;
     
 };
